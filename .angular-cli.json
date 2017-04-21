@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "assets/scss/studio.scss",
+        "../node_modules/mdi/scss/materialdesignicons.scss"
       ],
       "scripts": [
       ],

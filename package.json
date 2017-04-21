@@ -1,9 +1,8 @@
 {
-  "name": "studio",
+  "name": "@vandalsquad/studio",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -38,6 +37,7 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "mdi": "^1.9.33",
     "node-sass": "^4.5.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
