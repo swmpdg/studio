@@ -1,0 +1,38 @@
+@import "../assets/scss/var/colors";
+
+.main-frame {
+  position: fixed;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+
+  background: $dark-purple;
+  color: $baby-powder;
+}
+
+$context-info-margin: 50px !default;
+$context-info-font-size: 1.4rem !default;
+
+$context-crumb-content: "\\" !default;
+$context-crumb-color: rgba($white, .4) !default;
+$context-crumb-margin: 0 10px 0 5px;
+
+.context-information {
+  position: fixed;
+  top: 0; left: 0;
+
+  margin: $context-info-margin 0 0 $context-info-margin;
+  font-size: $context-info-font-size;
+
+  .context-name {
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  .context-crumb {
+    &:before {
+      content: $context-crumb-content;
+      display: inline-block;
+      color: $context-crumb-color;
+      margin: $context-crumb-margin;
+    }
+  }
+}
