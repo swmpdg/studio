@@ -1,0 +1,16 @@
+$white: #FFFFFF;
+$black: #1A1A1A;
+
+// https://coolors.co/2b2238-7cbabc-66cc7c-cc6666-fcfcfc
+$dark-purple:    #2B2238;
+$moonstone-blue: #7CBABC;
+$paris-green:    #66CC7C;
+$fuzzy-wuzzy:    #CC6666;
+$baby-powder:    #FCFCFC;
+
+$schemes: (
+  primary:   $dark-purple,
+  secondary: $moonstone-blue,
+  success:   $paris-green,
+  danger:    $fuzzy-wuzzy
+);
