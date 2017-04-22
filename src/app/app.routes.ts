@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from "@angular/router";
+import { Routes } from "@angular/router";
 
 import { StorageViewComponent } from "app/views/storage/storage.view";
 
