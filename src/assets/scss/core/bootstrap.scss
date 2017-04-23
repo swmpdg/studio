@@ -27,7 +27,15 @@ $vandalsquad-tag-src: "../svg/vandalsquad_tag.svg" !default;
   background-size: contain;
 }
 
+$page-space: 60px;
+$page-space-top: 125px;
+$page-space-bottom: 25px;
+
 .application-page {
   position: relative;
-  margin: 125px 75px 25px 75px;
+  margin:
+    $page-space-top
+    $page-space
+    $page-space-bottom
+    $page-space;
 }

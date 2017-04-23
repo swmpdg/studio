@@ -18,7 +18,7 @@
   }
 }
 
-$context-info-space: 75px !default;
+$context-info-space: 60px !default;
 $context-info-space-bottom: 25px !default;
 $context-info-font-size: 1.4rem !default;
 
@@ -71,7 +71,7 @@ $account-states: (
   sleeping: $fuzzy-wuzzy
 );
 
-$account-image-size: 60px !default;
+$account-image-size: 65px !default;
 $account-image-placeholder-size: 1.5rem !default;
 
 .account-information {
