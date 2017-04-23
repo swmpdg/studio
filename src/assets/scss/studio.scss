@@ -1,3 +1,9 @@
 @charset "utf-8";
 
-@import "core/typo";
+@import "var/root";
+
+@import "core/normalize";
+@import "core/bootstrap";
+@import "core/typography";
+@import "core/loader";
+@import "core/utils";

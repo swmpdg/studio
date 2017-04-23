@@ -1,0 +1,15 @@
+/**
+ * Determines the best readable text color for a given background color using a defined threshold
+ * @param {Color}  $color     The background color to determine the text color for
+ * @param {Number} $threshold Optional threshold value to set. Defaults to 75 percent
+ * @param {Number} $by        Optional by value (percent) to lighten or darken the actual color value by. Defaults to 100 percent
+ */
+@function text-color($color, $threshold: 75%, $by: 100%) {
+  $lightness : lightness($color);
+
+  @if ($lightness < $threshold) {
+    @return lighten($color, $by);
+  } @else {
+    @return darken($color, $by);
+  }
+}

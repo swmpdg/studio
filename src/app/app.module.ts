@@ -7,15 +7,20 @@ import { HttpModule } from "@angular/http";
 import { AppComponent } from "./app.component";
 import { ROUTES } from "./app.routes";
 
+// Services:
 import { AccountService } from "app/services/account/account.service";
 import { StorageService } from "app/services/storage/storage.service";
+import { ContextService } from "app/services/context/context.service";
+// Views:
 import { StorageViewComponent } from "app/views/storage/storage.view";
+import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
 
 @NgModule({
   declarations: [
     AppComponent,
     // Views:
-    StorageViewComponent
+    StorageViewComponent,
+    WorkspaceViewComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +30,9 @@ import { StorageViewComponent } from "app/views/storage/storage.view";
   ],
   providers: [
     AccountService,
+    ContextService,
     StorageService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

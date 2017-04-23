@@ -1,31 +1,54 @@
 @import "../assets/scss/var/colors";
+@import "../assets/scss/fn/utils";
 
 .main-frame {
   position: fixed;
   top: 0; bottom: 0;
   left: 0; right: 0;
 
-  background: $dark-purple;
-  color: $baby-powder;
+  &.frame-white {
+    background: $baby-powder;
+    color: $black;
+  }
+  @each $scheme, $color in $schemes {
+    &.frame-#{$scheme} {
+      background: $color;
+      color: text-color($color);
+    }
+  }
 }
 
-$context-info-margin: 50px !default;
+$context-info-space: 75px !default;
+$context-info-space-bottom: 25px !default;
 $context-info-font-size: 1.4rem !default;
 
 $context-crumb-content: "\\" !default;
-$context-crumb-color: rgba($white, .4) !default;
-$context-crumb-margin: 0 10px 0 5px;
+$context-crumb-color: inherit !default;
+$context-crumb-margin: 0 10px !default;
+$context-crumb-opacity: .4 !default;
 
 .context-information {
   position: fixed;
   top: 0; left: 0;
+  white-space: nowrap;
 
-  margin: $context-info-margin 0 0 $context-info-margin;
+  padding:
+    $context-info-space
+    $context-info-space
+    $context-info-space-bottom
+    $context-info-space;
   font-size: $context-info-font-size;
+
+  .vandalsquad-tag {
+    pointer-events: none;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: .075;
+  }
 
   .context-name {
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
   }
   .context-crumb {
     &:before {
@@ -33,6 +56,72 @@ $context-crumb-margin: 0 10px 0 5px;
       display: inline-block;
       color: $context-crumb-color;
       margin: $context-crumb-margin;
+      opacity: $context-crumb-opacity;
+    }
+  }
+}
+
+$account-info-space: $context-info-space !default;
+$account-info-space-bottom: $context-info-space-bottom !default;
+
+$account-state-offset: -6px;
+$account-state-border: 2px solid;
+$account-states: (
+  active: $paris-green,
+  sleeping: $fuzzy-wuzzy
+);
+
+$account-image-size: 60px !default;
+$account-image-placeholder-size: 1.5rem !default;
+
+.account-information {
+  position: fixed;
+  top: 0; right: 0;
+  white-space: nowrap;
+
+  padding:
+    $account-info-space
+    $account-info-space
+    $account-info-space-bottom
+    $account-info-space;
+
+  .account-state {
+    position: absolute;
+    top: $account-state-offset;
+    bottom: $account-state-offset;
+    right: $account-state-offset;
+    left: $account-state-offset;
+    border-radius: 100%;
+    border: $account-state-border rgba($black, .2);
+
+    @each $state, $color in $account-states {
+      &.state-#{$state} { border-color: $color; }
+    }
+  }
+
+  .account-avatar {
+    position: relative;
+    height: $account-image-size;
+    width: $account-image-size;
+    border-radius: 100%;
+
+    .account-image {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      background-color: rgba($black, .1);
+      background-position: center center;
+      background-size: contain;
+      border-radius: inherit;
+    }
+
+    .account-image-placeholder {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+
+      font-size: $account-image-placeholder-size;
+      opacity: .25;
     }
   }
 }

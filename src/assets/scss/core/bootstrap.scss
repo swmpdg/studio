@@ -1,0 +1,33 @@
+@import "../fn/utils";
+@import "../var/colors";
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,700");
+
+html {
+  font-family: "Fira Sans Condensed", Calibri, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  $scheme-primary: map-get($schemes, primary);
+
+  background: $scheme-primary;
+  color: text-color($scheme-primary);
+}
+
+$vandalsquad-tag-width: 570.109px !default;
+$vandalsquad-tag-height: 165.554px !default;
+$vandalsquad-tag-src: "../svg/vandalsquad_tag.svg" !default;
+
+.vandalsquad-tag {
+  display: inline-block;
+  width: $vandalsquad-tag-width;
+  height: $vandalsquad-tag-height;
+  background: url($vandalsquad-tag-src) no-repeat center center;
+  background-size: contain;
+}
+
+.application-page {
+  position: relative;
+  margin: 125px 75px 25px 75px;
+}

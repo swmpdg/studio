@@ -1,0 +1,9 @@
+// This file defines an interface between the scss variable environment and the css3 custom property spec. For
+// more information about custom properties see: https://www.w3.org/TR/css-variables/
+@import "colors";
+
+:root {
+  @each $scheme, $color in $schemes {
+    --color-#{$scheme}: $color;
+  }
+}

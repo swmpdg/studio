@@ -1,0 +1,19 @@
+@import "../fn/utils";
+@import "../var/colors";
+
+@each $scheme, $color in $schemes {
+  .bg-#{$scheme} {
+    background-color: $color;
+    color: text-color($color);
+  }
+}
+
+@each $scheme, $color in $schemes {
+  .text-#{$scheme} {
+    color: $color;
+  }
+}
+
+.text-muted {
+  opacity: .6;
+}
