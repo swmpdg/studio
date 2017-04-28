@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class AccountService {
+export class Account {
   public name: string;
   public imageUrl: string;
   public status: "active" | "sleeping";

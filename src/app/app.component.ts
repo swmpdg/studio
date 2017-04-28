@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { AccountService } from "app/services/account/account.service";
-import { ContextService } from "app/services/context/context.service";
+import { Account } from "app/services/account/account.service";
+import { Context } from "app/services/context/context.service";
 
 @Component({
   selector: "studio",
@@ -11,8 +11,8 @@ import { ContextService } from "app/services/context/context.service";
 })
 export class AppComponent implements OnInit {
   public constructor(
-    protected account: AccountService,
-    protected context: ContextService,
+    protected account: Account,
+    protected context: Context,
     protected router: Router
   ) {}
 

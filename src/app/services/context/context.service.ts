@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class ContextService {
+export class Context {
   public name: string;
   public crumbs: Array<string>;
   public frameClass: string;
