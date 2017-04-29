@@ -22,6 +22,11 @@
         "assets/scss/studio.scss",
         "../node_modules/mdi/scss/materialdesignicons.scss"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "assets/scss/"
+        ]
+      },
       "scripts": [
       ],
       "environmentSource": "environments/environment.ts",
