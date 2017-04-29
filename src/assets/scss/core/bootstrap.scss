@@ -4,20 +4,29 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,700");
 
 html {
-  font-family: "Fira Sans Condensed", Calibri, sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 16px;
 }
 
 body {
-  $scheme-primary: map-get($schemes, primary);
+  background: $color-primary;
+  color: text-color($color-primary);
+}
 
-  background: $scheme-primary;
-  color: text-color($scheme-primary);
+$vandalsquad-logo-size: 70px !default;
+$vandalsquad-logo-src: ("../png/vandalsquad_logo.png") !default;
+
+.vandalsquad-logo {
+  display: inline-block;
+  width: $vandalsquad-logo-size;
+  height: $vandalsquad-logo-size;
+  background: url($vandalsquad-logo-src) no-repeat center center;
+  background-size: contain;
 }
 
 $vandalsquad-tag-width: 570.109px !default;
 $vandalsquad-tag-height: 165.554px !default;
-$vandalsquad-tag-src: "../svg/vandalsquad_tag.svg" !default;
+$vandalsquad-tag-src: ("../svg/vandalsquad_tag.svg") !default;
 
 .vandalsquad-tag {
   display: inline-block;
@@ -28,7 +37,7 @@ $vandalsquad-tag-src: "../svg/vandalsquad_tag.svg" !default;
 }
 
 $page-space: 60px;
-$page-space-top: 125px;
+$page-space-top: 155px;
 $page-space-bottom: 25px;
 
 .application-page {

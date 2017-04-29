@@ -13,3 +13,12 @@
     @return darken($color, $by);
   }
 }
+
+/**
+ * Concatenates a given relative url with the base cdn url
+ * @param {string} $relative-url The relative path to the content
+ * @param {string} $base-url     Optional base cdn url to use. Defaults to "vandalsquad/resources" github repository
+ */
+@function cdn($relative-url, $base-url: "https://raw.githubusercontent.com/vandalsquad/resources/master/") {
+  @return $base-url + $relative-url;
+}

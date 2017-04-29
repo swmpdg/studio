@@ -8,9 +8,14 @@ $paris-green:    #66CC7C;
 $fuzzy-wuzzy:    #CC6666;
 $baby-powder:    #FCFCFC;
 
+$color-primary:   $dark-purple !default;
+$color-secondary: $moonstone-blue !default;
+$color-success:   $paris-green !default;
+$color-danger:    $fuzzy-wuzzy !default;
+
 $schemes: (
-  primary:   $dark-purple,
-  secondary: $moonstone-blue,
-  success:   $paris-green,
-  danger:    $fuzzy-wuzzy
+  primary:   $color-primary,
+  secondary: $color-secondary,
+  success:   $color-success,
+  danger:    $color-danger
 );
