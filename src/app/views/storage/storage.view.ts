@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { StorageService } from "app/services/storage/storage.service";
+import { Storage } from "app/services/storage/storage.service";
 
 @Component({
   selector: "storage-view",
@@ -8,6 +8,6 @@ import { StorageService } from "app/services/storage/storage.service";
 })
 export class StorageViewComponent {
   public constructor(
-    protected storage: StorageService
+    protected storage: Storage
   ) {}
 }
