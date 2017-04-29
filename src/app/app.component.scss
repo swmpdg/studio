@@ -1,5 +1,7 @@
-@import "../assets/scss/var/colors";
-@import "../assets/scss/fn/utils";
+@import "var/colors";
+@import "var/spacing";
+
+@import "fn/utils";
 
 .main-frame {
   position: fixed;
@@ -14,118 +16,6 @@
     &.frame-#{$scheme} {
       background: $color;
       color: text-color($color);
-    }
-  }
-}
-
-$context-info-space: 60px !default;
-$context-info-space-bottom: 25px !default;
-$context-info-font-size: 1.4rem !default;
-
-$context-crumb-content: "\\" !default;
-$context-crumb-color: inherit !default;
-$context-crumb-margin: 0 10px !default;
-$context-crumb-opacity: .4 !default;
-
-.context-information {
-  position: fixed;
-  top: 0; left: 0;
-  white-space: nowrap;
-
-  padding:
-    $context-info-space
-    $context-info-space
-    $context-info-space-bottom
-    $context-info-space;
-  font-size: $context-info-font-size;
-
-  .vandalsquad-tag {
-    pointer-events: none;
-    position: absolute;
-    top: 0; left: 0;
-    opacity: .075;
-  }
-  .vandalsquad-logo {
-    margin-right: 25px;
-    vertical-align: middle;
-  }
-
-  .context-name {
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .context-crumb {
-    &:before {
-      content: $context-crumb-content;
-      display: inline-block;
-      color: $context-crumb-color;
-      margin: $context-crumb-margin;
-      opacity: $context-crumb-opacity;
-    }
-  }
-}
-
-$account-info-space: $context-info-space !default;
-$account-info-space-bottom: $context-info-space-bottom !default;
-
-$account-state-offset: -6px;
-$account-state-border: 2px solid;
-$account-states: (
-  active: $paris-green,
-  sleeping: $fuzzy-wuzzy
-);
-
-$account-image-size: 70px !default;
-$account-image-placeholder-size: 1.5rem !default;
-
-.account-information {
-  position: fixed;
-  top: 0; right: 0;
-  white-space: nowrap;
-
-  padding:
-    $account-info-space
-    $account-info-space
-    $account-info-space-bottom
-    $account-info-space;
-
-  .account-state {
-    position: absolute;
-    top: $account-state-offset;
-    bottom: $account-state-offset;
-    right: $account-state-offset;
-    left: $account-state-offset;
-    border-radius: 100%;
-    border: $account-state-border rgba($black, .2);
-
-    @each $state, $color in $account-states {
-      &.state-#{$state} { border-color: $color; }
-    }
-  }
-
-  .account-avatar {
-    position: relative;
-    height: $account-image-size;
-    width: $account-image-size;
-    border-radius: 100%;
-
-    .account-image {
-      position: absolute;
-      top: 0; bottom: 0;
-      left: 0; right: 0;
-      background-color: rgba($black, .1);
-      background-position: center center;
-      background-size: contain;
-      border-radius: inherit;
-    }
-
-    .account-image-placeholder {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-
-      font-size: $account-image-placeholder-size;
-      opacity: .25;
     }
   }
 }

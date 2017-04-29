@@ -1,0 +1,8 @@
+<div class="account-information">
+  <div class="account-avatar">
+    <i class="account-image-placeholder mdi mdi-account"></i>
+
+    <div class="account-image" [ngStyle]="{'background-image': 'url(' + account.imageUrl + ')' }"></div>
+    <div class="account-state state-{{ account.status }}"></div>
+  </div>
+</div>

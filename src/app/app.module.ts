@@ -9,18 +9,24 @@ import { ROUTES } from "./app.routes";
 
 // Services:
 import { Account } from "app/services/account/account.service";
-import { StorageService } from "app/services/storage/storage.service";
+import { Storage } from "app/services/storage/storage.service";
 import { Context } from "app/services/context/context.service";
 // Views:
 import { StorageViewComponent } from "app/views/storage/storage.view";
 import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
+// Components:
+import { AccountInformationComponent } from "./components/account-information/account.component";
+import { ContextInformationComponent } from "./components/context-information/context.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     // Views:
     StorageViewComponent,
-    WorkspaceViewComponent
+    WorkspaceViewComponent,
+    // Components:
+    AccountInformationComponent,
+    ContextInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,7 @@ import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
   providers: [
     Account,
     Context,
-    StorageService
+    Storage
   ],
   bootstrap: [AppComponent]
 })

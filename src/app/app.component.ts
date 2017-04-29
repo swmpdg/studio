@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     protected account: Account,
     protected context: Context,
     protected router: Router
-  ) {}
+  ) { }
 
   public ngOnInit() {
     this.router.navigate([ "/workspace" ]);

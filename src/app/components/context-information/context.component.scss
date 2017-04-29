@@ -1,0 +1,48 @@
+@import "var/spacing";
+
+$context-info-space: $space-large !default;
+$context-info-space-bottom: 25px !default;
+$context-info-font-size: 1.4rem !default;
+
+$context-crumb-content: "\\" !default;
+$context-crumb-color: inherit !default;
+$context-crumb-margin: 0 10px !default;
+$context-crumb-opacity: .4 !default;
+
+.context-information {
+  position: fixed;
+  top: 0; left: 0;
+  white-space: nowrap;
+
+  padding:
+    $context-info-space
+    $context-info-space
+    $context-info-space-bottom
+    $context-info-space;
+  font-size: $context-info-font-size;
+
+  .vandalsquad-tag {
+    pointer-events: none;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: .075;
+  }
+  .vandalsquad-logo {
+    margin-right: 25px;
+    vertical-align: middle;
+  }
+
+  .context-name {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .context-crumb {
+    &:before {
+      content: $context-crumb-content;
+      display: inline-block;
+      color: $context-crumb-color;
+      margin: $context-crumb-margin;
+      opacity: $context-crumb-opacity;
+    }
+  }
+}
