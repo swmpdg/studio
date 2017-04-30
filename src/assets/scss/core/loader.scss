@@ -42,7 +42,9 @@ $loader-color:     $white;
 
   .loader-path {
     stroke: $loader-color;
+    stroke-width: $loader-thickness;
     stroke-dasharray: 1, 200;
+    stroke-miterlimit: 10;
     stroke-dashoffset: 0;
     animation: dash 1.5s ease-in-out infinite;
     stroke-linecap: round;
