@@ -17,6 +17,7 @@ import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
 // Components:
 import { AccountInformationComponent } from "./components/account-information/account.component";
 import { ContextInformationComponent } from "./components/context-information/context.component";
+import { ToolsetComponent } from "./components/toolset/toolset.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ContextInformationComponent } from "./components/context-information/co
     WorkspaceViewComponent,
     // Components:
     AccountInformationComponent,
-    ContextInformationComponent
+    ContextInformationComponent,
+    ToolsetComponent
   ],
   imports: [
     BrowserModule,
@@ -41,4 +43,4 @@ import { ContextInformationComponent } from "./components/context-information/co
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

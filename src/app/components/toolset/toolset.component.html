@@ -1,0 +1,13 @@
+<div class="toolset" [ngClass]="{
+    'top':    hasAnchor(VisualAnchor.Top),
+    'right':  hasAnchor(VisualAnchor.Right),
+    'bottom': hasAnchor(VisualAnchor.Bottom),
+    'left':   hasAnchor(VisualAnchor.Left) }">
+  <div class="tool" *ngFor="let tool of context.toolSet">
+    <i class="mdi mdi-{{ tool.toolClass }}" [attr.id]="tool.name"
+       (mousedown)="tool.onActivation($event, context) || noop()"
+       (mousemove)="tool.onPending($event, context) || noop()"
+       (mouseup)="tool.onDeactivation($event, context) || noop()">
+    </i>
+  </div>
+</div>

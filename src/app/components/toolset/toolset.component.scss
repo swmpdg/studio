@@ -1,0 +1,9 @@
+@import "var/spacing";
+
+.toolset {
+  position: fixed;
+
+  &.top {
+    top: $page-space-top !important;
+  }
+}

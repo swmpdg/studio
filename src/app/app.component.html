@@ -1,6 +1,8 @@
-<div class="main-frame {{context.frameClass}}">
+<div class="main-frame {{ context.frameClass }}">
   <context-information></context-information>
   <account-information></account-information>
+
+  <toolset [anchor]="combineFlags(VisualAnchor.Vertical, VisualAnchor.Right)"></toolset>
 
   <router-outlet></router-outlet>
 
