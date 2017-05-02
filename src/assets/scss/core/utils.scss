@@ -1,3 +1,9 @@
+$anchors: (top, left, bottom, right);
+
+@each $anchor in $anchors {
+  .#{$anchor} { #{$anchor}: 0 !important; }
+}
+
 .clear-fix {
   &:before, &:after {
     content: " ";
