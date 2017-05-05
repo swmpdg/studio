@@ -4,6 +4,6 @@
 
   <span class="context-name">{{ context.name }}</span>
   <span class="context-crumb" *ngFor="let crumb of context.crumbs">
-    {{ crumb }}
+    <a [routerLink]="crumb.link || empty">{{ crumb.label }}</a>
   </span>
 </div>

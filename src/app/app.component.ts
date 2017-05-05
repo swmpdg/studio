@@ -3,14 +3,14 @@ import { Router } from "@angular/router";
 
 import { Account } from "app/services/account/account.service";
 import { Context } from "app/services/context/context.service";
-import { VisualComponent } from "./cores/visual-component";
+import { BaseComponent } from "./core/base-component";
 
 @Component({
   selector: "studio",
   templateUrl: "./app.component.html",
   styleUrls: [ "./app.component.scss" ]
 })
-export class AppComponent extends VisualComponent implements OnInit {
+export class AppComponent extends BaseComponent implements OnInit {
   public constructor(
     protected account: Account,
     protected context: Context,

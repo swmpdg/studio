@@ -1,9 +1,13 @@
 @import "var/spacing";
+@import "var/colors";
+
+@import "fn/utils";
 
 $context-info-space: $space-large !default;
 $context-info-space-bottom: 25px !default;
 $context-info-font-size: 1.4rem !default;
 
+$context-crumb-color: $black !default;
 $context-crumb-content: "\\" !default;
 $context-crumb-color: inherit !default;
 $context-crumb-margin: 0 10px !default;
@@ -37,6 +41,17 @@ $context-crumb-opacity: .4 !default;
     font-weight: 700;
   }
   .context-crumb {
+    .context-crumb-link, a {
+      text-decoration: none;
+      cursor: default;
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: rgba($context-crumb-color, .1);
+      }
+    }
+
     &:before {
       content: $context-crumb-content;
       display: inline-block;
