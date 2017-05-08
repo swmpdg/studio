@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
 import { ROUTES } from "./app.routes";
 
 // Services:
+import { Locale } from "app/services/locale/locale.service";
 import { Account } from "app/services/account/account.service";
 import { Storage } from "app/services/storage/storage.service";
 import { Context } from "app/services/context/context.service";
@@ -17,6 +18,8 @@ import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
 // Components:
 import { AccountInformationComponent } from "./components/account-information/account.component";
 import { ContextInformationComponent } from "./components/context-information/context.component";
+// Pipes:
+import { LocalizationPipe } from "./pipes/l10n.pipe";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { ContextInformationComponent } from "./components/context-information/co
     WorkspaceViewComponent,
     // Components:
     AccountInformationComponent,
-    ContextInformationComponent
+    ContextInformationComponent,
+    // Pipes:
+    LocalizationPipe
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { ContextInformationComponent } from "./components/context-information/co
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
+    Locale,
     Account,
     Context,
     Storage

@@ -3,7 +3,8 @@ import { Router } from "@angular/router";
 
 import { Account } from "app/services/account/account.service";
 import { Context } from "app/services/context/context.service";
-import { BaseComponent } from "./core/base-component";
+import { Locale } from "app/services/locale/locale.service";
+import { BaseComponent } from "app/core/base-component";
 
 @Component({
   selector: "studio",
@@ -12,10 +13,15 @@ import { BaseComponent } from "./core/base-component";
 })
 export class AppComponent extends BaseComponent implements OnInit {
   public constructor(
+    protected locale: Locale,
     protected account: Account,
     protected context: Context,
     protected router: Router
-  ) { super(); }
+  ) {
+    super();
+
+    this.locale.origin("/assets/lang/{locale}/common.json");
+  }
 
   public ngOnInit() {
     this.router.navigate([ "/workspace" ]);
