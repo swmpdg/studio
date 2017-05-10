@@ -16,7 +16,7 @@ export class Context {
   public constructor() {
     // Default context values...
     this.name = "Studio";
-    this.crumbs = [{ label: "Workspace" }] as Array<IContextCrumb>;
+    this.crumbs = [{ label: "Workspace" }, { label: "Canvas" }] as Array<IContextCrumb>;
     this.frameClass = "frame-white";
     this.isLoading = false;
   }

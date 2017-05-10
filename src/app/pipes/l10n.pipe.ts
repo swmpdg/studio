@@ -7,9 +7,25 @@ export class LocalizationPipe implements PipeTransform {
   public constructor(protected locale: Locale) { }
 
   public transform(resourceKey: string, ...args: any[]): any {
-    let resourceValue = this.locale.resources
-      ? this.locale.resources[resourceKey]
-      : false;
+    const keyParts = resourceKey.split(".");
+    let resourceValue: string | boolean;
+
+    if (keyParts && keyParts.length && this.locale.resources) {
+      let nestedResource = this.locale.resources;
+      for (const keyPart of keyParts) {
+        if (nestedResource.hasOwnProperty(keyPart)) {
+          nestedResource = nestedResource[keyPart];
+        } else { break; }
+      }
+      // Write the nested resource value...
+      resourceValue = nestedResource === this.locale.resources
+        ? nestedResource[resourceKey]
+        : nestedResource;
+    } else {
+      resourceValue = this.locale.resources
+        ? this.locale.resources[resourceKey]
+        : false;
+    }
 
     if (args.length && resourceValue) {
       // Are there any arguments...?

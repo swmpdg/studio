@@ -18,4 +18,16 @@
       color: text-color($color);
     }
   }
+
+  .version {
+    position: fixed;
+    bottom: 0; left: 0;
+    margin: $page-space;
+    font-family: monospace;
+    user-select: none;
+
+    .git-sha {
+      opacity: .75;
+    }
+  }
 }
