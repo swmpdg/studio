@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { Account } from "app/services/account/account.service";
@@ -11,7 +11,9 @@ import { BaseComponent } from "app/core/base-component";
   templateUrl: "./app.component.html",
   styleUrls: [ "./app.component.scss" ]
 })
-export class AppComponent extends BaseComponent implements OnInit {
+export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
+  public static readonly RESOURCE_URL = "/assets/lang/{locale}/common.json";
+
   public constructor(
     protected locale: Locale,
     protected account: Account,
@@ -20,10 +22,13 @@ export class AppComponent extends BaseComponent implements OnInit {
   ) {
     super();
 
-    this.locale.origin("/assets/lang/{locale}/common.json");
+    this.locale.origin(AppComponent.RESOURCE_URL).subscribe();
   }
 
   public ngOnInit() {
     this.router.navigate([ "/workspace" ]);
+  }
+  public ngOnDestroy() {
+    this.locale.dispose(AppComponent.RESOURCE_URL).subscribe();
   }
 }

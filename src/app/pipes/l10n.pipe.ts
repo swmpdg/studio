@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { Observable } from "rxjs/Observable";
 
 import { Locale } from "app/services/locale/locale.service";
 

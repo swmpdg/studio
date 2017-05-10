@@ -47,4 +47,6 @@ import { LocalizationPipe } from "./pipes/l10n.pipe";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  public constructor() { }
+}

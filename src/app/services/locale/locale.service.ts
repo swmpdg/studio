@@ -10,6 +10,7 @@ export class Locale<T = any> {
   public static readonly RES_PATTERN = /{(loc|locale|localeKey|lang|langKey|language)}/gi;
 
   private _locale: string;
+  private _resourceKeyCache: Map<string, string[]>;
   private _resources: T;
 
   public constructor(protected http: Http) { }
@@ -43,9 +44,19 @@ export class Locale<T = any> {
    * Subscribes the resource receive workflow and emits the value as new origin for the locale resources
    * @param {string} resourceUrl The resource url to use as new origin
    */
-  public origin(resourceUrl: string): void {
-    this.from(resourceUrl).subscribe(resource => {
-      this._resources = resource;
+  public origin(resourceUrl: string): Observable<T> {
+    if (!this._resourceKeyCache) {
+      this._resourceKeyCache = new Map<string, string[]>();
+    }
+
+    return Observable.create(observer => {
+      this.from(resourceUrl).subscribe(resource => {
+        this._resourceKeyCache.set(resourceUrl, Object.keys(resource));
+        this._resources = resource;
+
+        observer.next(resource);
+        observer.complete();
+      }, observer.error);
     });
   }
 
@@ -53,9 +64,85 @@ export class Locale<T = any> {
    * Subscribes the resource receive workflow and emits the value by merging it into the locale resources
    * @param {string} resourceUrl The resource url to use for the merge process
    */
-  public merge(resourceUrl: string): void {
-    this.from(resourceUrl).subscribe(resource => {
-      this._resources = Object.assign(this._resources, resource);
+  public merge(resourceUrl: string): Observable<T> {
+    if (!this._resourceKeyCache) {
+      this._resourceKeyCache = new Map<string, string[]>();
+    }
+
+    return Observable.create(observer => {
+      this.from(resourceUrl).subscribe(resource => {
+        this._resourceKeyCache.set(resourceUrl, Object.keys(resource));
+        this._resources = Object.assign(this._resources, resource);
+
+        observer.next(resource);
+        observer.complete();
+      }, observer.error);
+    });
+  }
+
+  /**
+   * Disposes the locale resources or a specific resource by its original url
+   * @param {string} [resourceUrl] Optional resource url to revoke
+   */
+  public dispose(resourceUrl?: string): Observable<string | void> {
+    return Observable.create(observer => {
+      try {
+        if (resourceUrl && this._resources) {
+          // Is there a specific resource url to revoke...?
+          const keyCache = this._resourceKeyCache.get(resourceUrl);
+          this._resourceKeyCache.delete(resourceUrl);
+
+          for (const key of keyCache || []) {
+            // Let's clean up that mess so the resource stays where it belongs...
+            if (this._resources.hasOwnProperty(key)) {
+              this._resources[key] = null;
+              delete this._resources[key];
+
+              observer.next(key);
+            }
+          }
+          observer.complete();
+        } else {
+          // Hm. Let's just tidy quick i guess...
+          this._resourceKeyCache = null;
+          this._resources = null;
+
+          observer.next();
+          observer.complete();
+        }
+      } catch (err) {
+        observer.error(err);
+      }
+    });
+  }
+
+  /**
+   * Excludes and returns the given resource fragment from the current locale resources
+   * @param {string} resourceUrl The resource url to use for the exclusion
+   */
+  public exclude(resourceUrl: string): Observable<T> {
+    return Observable.create(observer => {
+      const exclusion = {} as any;
+
+      try {
+        const keyCache = this._resourceKeyCache.get(resourceUrl);
+        this._resourceKeyCache.delete(resourceUrl);
+
+        for (const key of keyCache || []) {
+          // Let's create the exclusion fields...
+          if (this._resources.hasOwnProperty(key)) {
+            exclusion[key] = this._resources[key];
+            // Clean it up afterwards...
+            this._resources[key] = null;
+            delete this._resources[key];
+          }
+        }
+      } catch (err) {
+        observer.error(err);
+      }
+
+      observer.next(exclusion);
+      observer.complete();
     });
   }
 }

@@ -1,7 +1,4 @@
 {
-  "workspace": {
-    "headline": "Hello World!"
-  },
   "workspace.headline": "Hey there...",
-  "workspace.paragraph$1": "This is the <b>vandalsquad</b> workspace. It will feature a <i>unique</i> way to interact with your window 😉"
+  "workspace.paragraph": "This is the <b>vandalsquad</b> workspace. It will feature a <i>unique</i> way to interact with your window 😉"
 }
