@@ -37,11 +37,9 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
   public ngOnInit() {
     this.router.navigate([ "/workspace" ]);
 
-    this.http.get("https://api.github.com/repos/vandalsquad/studio/commits").subscribe(response => {
-      const body = response.json();
-
-      this._latestGitCommit = body[0].commit;
-    });
+    this.http.get("https://api.github.com/repos/vandalsquad/studio/commits")
+      .map(response => response.json())
+      .subscribe(body => this._latestGitCommit = body[0]["commit"]);
   }
   public ngOnDestroy() {
     this.locale.dispose(AppComponent.RESOURCE_URL).subscribe();
