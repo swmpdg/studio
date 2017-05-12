@@ -1,0 +1,13 @@
+<div class="color-palette">
+  <div class="color-actors">
+    <div class="color-foreground"
+      [style.background-color]="'#' + colorForeground"></div>
+    <!--<div class="color-background"
+      [style.background-color]="'#' + colorBackground"></div>-->
+  </div>
+
+  <ul class="color-collections">
+    <li class="color-drop" *ngFor="let value of collections"
+      [style.background-color]="'#' + value.hex"></li>
+  </ul>
+</div>

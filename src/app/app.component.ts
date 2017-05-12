@@ -6,6 +6,7 @@ import { Account } from "app/services/account/account.service";
 import { Context } from "app/services/context/context.service";
 import { Locale } from "app/services/locale/locale.service";
 import { BaseComponent } from "app/core/base-component";
+import { Repository } from "./services/repository/repository.service";
 
 @Component({
   selector: "studio",
@@ -15,31 +16,21 @@ import { BaseComponent } from "app/core/base-component";
 export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
   public static readonly RESOURCE_URL = "/assets/lang/{locale}/common.json";
 
-  private _latestGitCommit = "loading...";
-
   public constructor(
     protected locale: Locale,
     protected account: Account,
+    protected repository: Repository,
     protected context: Context,
-    protected router: Router,
-    protected http: Http
+    protected router: Router
   ) {
     super();
 
     this.locale.origin(AppComponent.RESOURCE_URL).subscribe();
   }
 
-  /** Gets the pushed github sha value for the latest commit */
-  public get latestGitCommit() {
-    return this._latestGitCommit;
-  }
-
   public ngOnInit() {
     this.router.navigate([ "/workspace" ]);
-
-    this.http.get("https://api.github.com/repos/vandalsquad/studio/commits")
-      .map(response => response.json())
-      .subscribe(body => this._latestGitCommit = body[0]["commit"]);
+    this.repository.getCommitHistory().subscribe();
   }
   public ngOnDestroy() {
     this.locale.dispose(AppComponent.RESOURCE_URL).subscribe();

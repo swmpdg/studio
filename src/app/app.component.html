@@ -12,6 +12,6 @@
 
   <div class="version">
     v<span class="major">0</span>.<span class="minor">0</span>.<span class="path">0</span>
-    <span class="git-sha">#{{ latestGitCommit?.tree?.sha || ("unavailable" | l10n) }}</span>
+    <span class="git-sha">#{{ repository.commits[0]?.sha || "_" }}</span>
   </div>
 </div>

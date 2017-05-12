@@ -1,0 +1,93 @@
+@import "var/spacing";
+@import "var/colors";
+
+$color-palette-z: 1;
+$color-fg-z:      2;
+$color-bg-z:      1;
+
+$color-size:            75px !default;
+$color-collection-size: 45px !default;
+
+$color-default-fg: $black !default;
+$color-default-bg: $white !default;
+$color-default-cc: #777777 !default;
+
+%color-drop {
+  cursor: pointer;
+  border: 1px solid rgba($black, .2);
+  border-radius: 50% 50% 0 50%;
+  transition: .1s ease-out;
+  display: inline-block;
+}
+
+.color-palette {
+  z-index: $color-palette-z;
+  position: fixed;
+  bottom: 0; right: 0;
+  margin: $page-space;
+
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+
+  .color-actors {
+    position: relative;
+    height: $color-size;
+    width: $color-size;
+    order: 1;
+  }
+
+  .color-foreground,
+  .color-background {
+    @extend %color-drop;
+
+    position: absolute;
+    height: $color-size;
+    width: $color-size;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
+
+  .color-foreground {
+    background: $color-default-fg;
+    z-index: $color-fg-z;
+  }
+  .color-background {
+    transform: translate(-40%);
+    background: $color-default-bg;
+    z-index: $color-bg-z;
+
+    &:hover {
+      transform: translate(-42%) scale(1.05);
+      z-index: $color-fg-z + 1;
+    }
+  }
+}
+
+.color-collections {
+  margin: 0 15px 0 0;
+  list-style: none;
+  display: block;
+  padding: 0;
+  order: 0;
+
+  .color-drop {
+    @extend %color-drop;
+
+    height: $color-collection-size;
+    width: $color-collection-size;
+    margin-right: 15px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
+}
