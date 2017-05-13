@@ -20,6 +20,7 @@ import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
 import { AccountInformationComponent } from "./components/account-information/account.component";
 import { ContextInformationComponent } from "./components/context-information/context.component";
 import { ColorPaletteComponent } from "./components/color-palette/color-palette.component";
+import { ColorPickerComponent } from "./components/color-picker/color-picker.component";
 // Pipes:
 import { LocalizationPipe } from "./pipes/l10n.pipe";
 
@@ -33,6 +34,7 @@ import { LocalizationPipe } from "./pipes/l10n.pipe";
     AccountInformationComponent,
     ContextInformationComponent,
     ColorPaletteComponent,
+    ColorPickerComponent,
     // Pipes:
     LocalizationPipe
   ],

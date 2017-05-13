@@ -17,4 +17,8 @@ $anchors: (top, left, bottom, right);
   zoom: 1;
 }
 
-.hidden { display: none !important; }
+.hidden, [hidden] { display: none !important; }
+
+.anchor {
+  position: relative !important;
+}

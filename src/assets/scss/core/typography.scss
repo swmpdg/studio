@@ -14,6 +14,28 @@
   }
 }
 
+@each $alignment in (left, right, center, justify) {
+  .text-#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
 .text-muted {
   opacity: .6;
+}
+
+@for $n from 1 through 3 {
+  .h#{$n}, h#{$n} {
+    font-size: larger;
+  }
+}
+
+@for $n from 4 through 6 {
+  .h#{$n}, h#{$n} {
+    font-size: smaller;
+
+    @if ($n > 4) {
+      font-weight: bold;
+    }
+  }
 }

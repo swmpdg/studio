@@ -1,0 +1,30 @@
+@import "var/colors";
+
+$close-size:  20px !default;
+$close-space: 10px !default;
+
+.close {
+  opacity: .75;
+  top: 0; right: 0;
+  position: absolute;
+  margin: $close-space;
+  font-size: $close-size;
+  line-height: $close-size;
+  transition: .1s ease-out;
+  vertical-align: middle;
+  height: $close-size;
+  width: $close-size;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  cursor: default;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    color: $color-danger;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,22 @@
+<div class="color-picker">
+  <div class="color-picker-headline">
+    Color picker <small class="text-muted">(sliders only)</small>
+  </div>
+
+  <small>
+    RGB   HUE  ..
+  </small>
+
+  <input class="color-picker-slider input-range" [style.width]="'100%'" type="range" max="100" value="0" title/>
+  <input class="color-picker-slider input-range" [style.width]="'100%'" type="range" max="100" value="0" title/>
+  <input class="color-picker-slider input-range" [style.width]="'100%'" type="range" max="100" value="0" title/>
+
+  <footer class="color-picker-footer text-right">
+    <button type="reset">cancel</button>
+    <button type="submit" class="success">
+      <i class="mdi mdi-check"></i>
+    </button>
+  </footer>
+
+  <span class="close">&times;</span>
+</div>

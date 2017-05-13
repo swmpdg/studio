@@ -43,6 +43,7 @@ $account-image-placeholder-size: 1.5rem !default;
     position: relative;
     height: $account-image-size;
     width: $account-image-size;
+    border: 1px solid rgba($black, .2);
     border-radius: 100%;
 
     .account-image {
