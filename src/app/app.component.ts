@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Http } from "@angular/http";
 
-import { Account } from "app/services/account/account.service";
 import { Context } from "app/services/context/context.service";
 import { Locale } from "app/services/locale/locale.service";
 import { BaseComponent } from "app/core/base-component";
@@ -18,7 +16,6 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
 
   public constructor(
     protected locale: Locale,
-    protected account: Account,
     protected repository: Repository,
     protected context: Context,
     protected router: Router

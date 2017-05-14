@@ -22,3 +22,7 @@ $anchors: (top, left, bottom, right);
 .anchor {
   position: relative !important;
 }
+
+@each $display in (none, inline, inline-block, block, flex) {
+  .#{$display} { display: $display; }
+}

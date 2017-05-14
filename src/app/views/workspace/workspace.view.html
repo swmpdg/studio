@@ -1,8 +1,25 @@
 <div class="application-page">
-  <p class="text-muted">
-    We are getting things ready. Check back soon!
-  </p>
+  <ul class="bar vertical float-right">
+    <li class="bar-modifier" [style.cursor]="'move'">
+      <i class="mdi mdi-drag-horizontal"></i>
+    </li>
+    <li class="bar-item">
+      <i class="mdi mdi-pencil"></i>
+    </li>
+    <li class="bar-item">
+      <i class="mdi mdi-marker"></i>
+    </li>
+    <li class="bar-item">
+      <i class="mdi mdi-format-color-fill"></i>
+    </li>
+    <li class="bar-item">
+      <i class="mdi mdi-pen"></i>
+    </li>
+  </ul>
 
-  <color-picker [color]=""></color-picker>
+  <div class="panel inline-block align-top">
+    <color-picker></color-picker>
+  </div>
+
   <color-palette></color-palette>
 </div>

@@ -1,0 +1,77 @@
+@import "var/transitions";
+@import "var/spacing";
+@import "var/colors";
+
+@import "candies/panel";
+
+$bar-padding-y: 0 !default;
+$bar-padding-x: 10px !default
+$bar-font-size: 20px !default;
+
+$bar-item-padding-x:   15px !default;
+$bar-item-padding-y:   20px !default
+$bar-item-focus-color: $color-primary !default;
+
+$bar-modifier-padding-x: 5px !default;
+$bar-modifier-padding-y: 20px !default
+
+.bar {
+  @extend .panel;
+
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+  padding:
+    $bar-padding-y
+    $bar-padding-x;
+  font-size: $bar-font-size;
+  transition: .1s $ease-out-expo;
+  white-space: nowrap;
+  user-select: none;
+
+  .bar-item {
+    transition: inherit;
+    display: inline-block;
+    padding:
+      $bar-item-padding-y
+      $bar-item-padding-x;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $bar-item-focus-color;
+      opacity: 1 !important;
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
+  .bar-modifier {
+    padding:
+      $bar-modifier-padding-y
+      $bar-modifier-padding-x;
+    display: inline-block;
+  }
+
+  &:hover .bar-item {
+    opacity: .25;
+  }
+
+  &.vertical {
+    padding:
+      $bar-padding-x
+      $bar-padding-y;
+
+    .bar-item {
+      padding:
+        $bar-item-padding-x
+        $bar-item-padding-y;
+      display: block;
+    }
+    .bar-modifier {
+      padding:
+        $bar-modifier-padding-x
+        $bar-modifier-padding-y;
+      display: block;
+    }
+  }
+}
