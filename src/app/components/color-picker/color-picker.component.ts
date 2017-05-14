@@ -7,7 +7,6 @@ import { Color } from "app/core/color";
   styleUrls: [ "./color-picker.component.scss" ]
 })
 export class ColorPickerComponent {
+  /** Gets or sets the selected color for the color picker component. Defaults to white */
   @Input() color: Color = Color.parse("#ffffff");
-
-  public constructor() { }
 }

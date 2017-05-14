@@ -1,23 +1,11 @@
 @import "core/typography";
 @import "input/group";
-@import "var/shadows";
 
 .color-picker {
-  position: absolute;
-  top: 0; right: 0;
-  transform: translate(0, -100%);
+  display: inline-block;
+  position: relative;
   min-width: 300px;
-  box-shadow: $shadow-large;
-  border-radius: 6px;
-  background: $white;
-  margin-top: -50px;
-  padding: 20px;
 
-  .color-picker-headline {
-    @extend .h6;
-
-    margin-bottom: 10px;
-  }
   .color-picker-slider {
     margin: 17px 0;
   }
@@ -35,10 +23,6 @@
 
     font-size: small;
     min-width: 1.5rem;
+    user-select: initial;
   }
-
-  .color-picker-footer, footer {
-    margin-top: 15px;
-  }
-
 }

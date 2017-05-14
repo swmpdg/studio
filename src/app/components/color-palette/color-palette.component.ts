@@ -13,7 +13,7 @@ export class ColorPaletteComponent {
     Color.parse("#66CC7C"),
     Color.parse("#CC6666")
   ];
-  @Input() activeColor: Color = Color.parse("#FCFCFC");
+  @Input() activeColor: Color = Color.parse("#1a1a1a");
 
   public constructor() {
     console.log(this.collections);

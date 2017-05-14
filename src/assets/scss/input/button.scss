@@ -2,24 +2,30 @@
 @import "fn/utils";
 
 $button-padding: 8px 1.25rem 9px 1.25rem !default;
+$button-radius:  12px !default;
+$button-border:  none !default;
 
 input[type="button"], button, .button, .btn {
   font-family: inherit;
   display: inline-block;
   padding: $button-padding;
+  border: $button-border;
   transition: .1s ease-out;
   vertical-align: middle;
-  border-radius: 12px;
+  border-radius: $button-radius;
   text-align: center;
   background: $white;
   cursor: pointer;
   color: $black;
-  border: none;
 
   @each $scheme, $color in $schemes {
     &.#{$scheme} {
       background: $color;
       color: text-color($color);
+
+      &:active {
+        background: darken($color, 5%);
+      }
     }
   }
 
@@ -30,6 +36,7 @@ input[type="button"], button, .button, .btn {
     transform: scale(1.05);
   }
   &:active {
+    background: darken($white, 5%);
     transform: scale(1);
   }
 

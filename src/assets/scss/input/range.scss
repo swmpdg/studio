@@ -2,7 +2,7 @@
 @import "var/transitions";
 
 $input-range-track-size: 3px !default;
-$input-range-thumb-size: 15px !default;
+$input-range-thumb-size: 16px !default;
 
 $input-range-track-color: lighten($black, 75%) !default;
 $input-range-thumb-color: lighten($black, 25%) !default;
@@ -24,7 +24,7 @@ $input-range-thumb-color: lighten($black, 25%) !default;
   width: $input-range-thumb-size;
   background: $input-range-thumb-color;
   border: 3px solid $white;
-  margin-top: -($input-range-thumb-size / 3);
+  margin-top: -($input-range-thumb-size * .37);
   border-radius: 50%;
 
   &:hover,

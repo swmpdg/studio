@@ -1,9 +1,5 @@
 <div class="color-picker">
-  <div class="color-picker-headline">
-    Color picker <small class="text-muted">(sliders only)</small>
-  </div>
-
-  <div class="input-group" id="colorPicker_red">
+  <div class="input-group">
     <span class="color-picker-slider-label">R</span>
     <input class="color-picker-slider input-range" type="range" max="255" min="0" title
       [(ngModel)]="color.red" />
@@ -27,13 +23,4 @@
       {{ color.blue }}
     </span>
   </div>
-
-  <footer class="color-picker-footer text-right">
-    <button type="reset">cancel</button>
-    <button type="submit" class="success">
-      <i class="mdi mdi-check"></i>
-    </button>
-  </footer>
-
-  <span class="close">&times;</span>
 </div>

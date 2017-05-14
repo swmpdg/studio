@@ -1,0 +1,15 @@
+@import "var/shadows";
+@import "var/colors";
+
+$panel-padding:  20px !default;
+$panel-rounding: 6px !default;
+
+$panel-bg:     $white !default;
+$panel-shadow: $shadow-large !default;
+
+.panel {
+  box-shadow: $panel-shadow;
+  border-radius: $panel-rounding;
+  padding: $panel-padding;
+  background: $panel-bg;
+}
