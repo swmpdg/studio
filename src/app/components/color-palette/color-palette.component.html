@@ -1,15 +1,13 @@
 <div class="color-palette">
-  <div class="color-actors">
-    <div class="color-foreground"
-      [style.background-color]="'#' + colorForeground.hex"></div>
-    <!--<div class="color-background"
-      [style.background-color]="'#' + colorBackground.hex"></div>-->
-  </div>
+  <div class="color-active" [style.background-color]="activeColor.toString(16)"></div>
 
-  <color-picker></color-picker>
+  <color-picker [color]="activeColor"></color-picker>
 
   <ul class="color-collections">
-    <li class="color-drop" *ngFor="let value of collections"
-      [style.background-color]="'#' + value.hex"></li>
+    <li class="color-collect">
+      <i class="mdi mdi-plus"></i>
+    </li>
+    <li class="color-drop"  *ngFor="let color of collections"
+      [style.background-color]="color.toString(16)"></li>
   </ul>
 </div>

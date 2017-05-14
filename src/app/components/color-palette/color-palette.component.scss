@@ -1,20 +1,17 @@
+@import "var/transitions";
 @import "var/shadows";
 @import "var/spacing";
 @import "var/colors";
 
 $color-palette-z: 1;
-$color-fg-z:      2;
-$color-bg-z:      1;
 
 $color-size:            75px !default;
 $color-collection-size: 45px !default;
 
-$color-default-fg: $black !default;
-$color-default-bg: $white !default;
+$color-default:    $black !default;
 $color-default-cc: #777777 !default;
 
 %color-drop {
-  cursor: pointer;
   border: 1px solid rgba($black, .2);
   border-radius: 50% 50% 0 50%;
   transition: .1s ease-out;
@@ -26,25 +23,18 @@ $color-default-cc: #777777 !default;
   position: fixed;
   bottom: 0; right: 0;
   margin: $page-space;
+  user-select: none;
 
   display: flex;
   flex-flow: row;
-  align-items: flex-end;
+  align-items: center;
 
-  .color-actors {
-    position: relative;
+  .color-active {
+    @extend %color-drop;
+
     height: $color-size;
     width: $color-size;
     order: 1;
-  }
-
-  .color-foreground,
-  .color-background {
-    @extend %color-drop;
-
-    position: absolute;
-    height: $color-size;
-    width: $color-size;
 
     &:hover {
       transform: scale(1.05);
@@ -54,41 +44,43 @@ $color-default-cc: #777777 !default;
     }
   }
 
-  .color-foreground {
-    background: $color-default-fg;
-    z-index: $color-fg-z;
-  }
-  .color-background {
-    transform: translate(-40%);
-    background: $color-default-bg;
-    z-index: $color-bg-z;
+  .color-collections {
+    margin: 0 10px 0 0;
+    list-style: none;
+    display: block;
+    padding: 0;
+    order: 0;
 
-    &:hover {
-      transform: translate(-42%) scale(1.05);
-      z-index: $color-fg-z + 1;
+    .color-collect {
+      margin-right: 15px;
+      transition: .2s $ease-out-expo;
+      vertical-align: middle;
+      display: inline-block;
+      font-size: 1.75rem;
+      opacity: .6;
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: .8;
+      }
+      &:active {
+        transform: scale(1);
+      }
     }
-  }
-}
+    .color-drop {
+      @extend %color-drop;
 
-.color-collections {
-  margin: 0 15px 0 0;
-  list-style: none;
-  display: block;
-  padding: 0;
-  order: 0;
+      height: $color-collection-size;
+      width: $color-collection-size;
+      vertical-align: middle;
+      margin-right: 15px;
 
-  .color-drop {
-    @extend %color-drop;
-
-    height: $color-collection-size;
-    width: $color-collection-size;
-    margin-right: 15px;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-    &:active {
-      transform: scale(1);
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(1);
+      }
     }
   }
 }

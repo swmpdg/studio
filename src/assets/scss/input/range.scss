@@ -1,7 +1,8 @@
 @import "var/colors";
+@import "var/transitions";
 
 $input-range-track-size: 3px !default;
-$input-range-thumb-size: 14px !default;
+$input-range-thumb-size: 15px !default;
 
 $input-range-track-color: lighten($black, 75%) !default;
 $input-range-thumb-color: lighten($black, 25%) !default;
@@ -18,17 +19,17 @@ $input-range-thumb-color: lighten($black, 25%) !default;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  transition: .2s ease-out;
+  transition: .4s $ease-out-expo;
   height: $input-range-thumb-size;
   width: $input-range-thumb-size;
   background: $input-range-thumb-color;
-  border: 2px solid $white;
+  border: 3px solid $white;
   margin-top: -($input-range-thumb-size / 3);
   border-radius: 50%;
 
   &:hover,
   &:focus {
-    transform: scale(1.15);
+    transform: scale(1.2);
   }
 }
 

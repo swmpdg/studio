@@ -20,6 +20,18 @@
   }
 }
 
+@each $alignment in (top, bottom, middle, baseline) {
+  .align-#{$alignment} {
+    vertical-align: $alignment;
+  }
+}
+
+@each $direction in (none, both, left, right) {
+  .float-#{$direction} {
+    float: $direction;
+  }
+}
+
 .text-muted {
   opacity: .6;
 }

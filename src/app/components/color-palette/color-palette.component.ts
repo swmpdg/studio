@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { Color } from "../../core/color";
 
 @Component({
   selector: "color-palette",
@@ -6,14 +7,15 @@ import { Component, Input } from "@angular/core";
   styleUrls: [ "./color-palette.component.scss" ]
 })
 export class ColorPaletteComponent {
-  @Input() collections: Array<ICollectionColor> = [{ hex: "A63D40" }, { hex: "90A959" }, { hex: "E9B872" }];
-  @Input() colorForeground: ICollectionColor = { hex: "151515" };
-  @Input() colorBackground: ICollectionColor = { hex: "ffffff" };
+  @Input() collections: Array<Color> = [
+    Color.parse("#2B2238"),
+    Color.parse("#7CBABC"),
+    Color.parse("#66CC7C"),
+    Color.parse("#CC6666")
+  ];
+  @Input() activeColor: Color = Color.parse("#FCFCFC");
 
-  public constructor() {}
-}
-
-export interface ICollectionColor {
-  name?: string;
-  hex: string;
+  public constructor() {
+    console.log(this.collections);
+  }
 }

@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Color } from "app/core/color";
 
 @Component({
   selector: "color-picker",
@@ -6,5 +7,7 @@ import { Component } from "@angular/core";
   styleUrls: [ "./color-picker.component.scss" ]
 })
 export class ColorPickerComponent {
+  @Input() color: Color = Color.parse("#ffffff");
 
+  public constructor() { }
 }

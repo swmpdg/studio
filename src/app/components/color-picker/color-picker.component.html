@@ -3,13 +3,30 @@
     Color picker <small class="text-muted">(sliders only)</small>
   </div>
 
-  <small>
-    RGB   HUE  ..
-  </small>
-
-  <input class="color-picker-slider input-range" [style.width]="'100%'" type="range" max="100" value="0" title/>
-  <input class="color-picker-slider input-range" [style.width]="'100%'" type="range" max="100" value="0" title/>
-  <input class="color-picker-slider input-range" [style.width]="'100%'" type="range" max="100" value="0" title/>
+  <div class="input-group" id="colorPicker_red">
+    <span class="color-picker-slider-label">R</span>
+    <input class="color-picker-slider input-range" type="range" max="255" min="0" title
+      [(ngModel)]="color.red" />
+    <span class="color-picker-value">
+      {{ color.red }}
+    </span>
+  </div>
+  <div class="input-group">
+    <span class="color-picker-slider-label">G</span>
+    <input class="color-picker-slider input-range" type="range" max="255" min="0" title
+      [(ngModel)]="color.green" />
+    <span class="color-picker-value">
+      {{ color.green }}
+    </span>
+  </div>
+  <div class="input-group">
+    <span class="color-picker-slider-label">B</span>
+    <input class="color-picker-slider input-range" type="range" max="255" min="0" title
+      [(ngModel)]="color.blue" />
+    <span class="color-picker-value">
+      {{ color.blue }}
+    </span>
+  </div>
 
   <footer class="color-picker-footer text-right">
     <button type="reset">cancel</button>

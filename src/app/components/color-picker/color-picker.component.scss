@@ -1,4 +1,5 @@
 @import "core/typography";
+@import "input/group";
 @import "var/shadows";
 
 .color-picker {
@@ -20,8 +21,24 @@
   .color-picker-slider {
     margin: 17px 0;
   }
+  .color-picker-slider-label {
+    @extend .align-middle;
+    @extend .input-add;
+
+    font-size: small;
+    min-width: 1rem;
+  }
+  .color-picker-value {
+    @extend .input-add;
+    @extend .text-center;
+    @extend .align-middle;
+
+    font-size: small;
+    min-width: 1.5rem;
+  }
 
   .color-picker-footer, footer {
     margin-top: 15px;
   }
+
 }
