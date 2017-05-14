@@ -4,6 +4,7 @@
 .color-picker {
   display: inline-block;
   position: relative;
+  user-select: none;
   min-width: 300px;
 
   .color-picker-slider {
