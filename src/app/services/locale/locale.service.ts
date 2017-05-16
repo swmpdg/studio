@@ -141,4 +141,12 @@ export class Locale<T = any> {
       observer.complete();
     });
   }
+
+  /**
+   * Returns whether a given resource is currently available by checking its resource url
+   * @param {string} resourceUrl The resource url to check
+   */
+  public has(resourceUrl: string): boolean {
+    return this._resourceKeyCache.has(resourceUrl || "");
+  }
 }
