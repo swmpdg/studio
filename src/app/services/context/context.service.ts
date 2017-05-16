@@ -4,7 +4,10 @@ import { IContextCrumb } from "./context.typings";
 
 @Injectable()
 export class Context {
-  /** Gets or sets the name for the active context */
+  /**
+   * Gets or sets the name for the active context
+   * @deprecated
+   */
   public name: string;
   /** Gets or sets the bread crumbs for the active context */
   public crumbs: Array<IContextCrumb>;
@@ -16,7 +19,7 @@ export class Context {
   public constructor() {
     // Default context values...
     this.name = "Studio";
-    this.crumbs = [{ label: "Workspace" }, { label: "Canvas" }] as Array<IContextCrumb>;
+    this.crumbs = [{ label: "studio" }] as Array<IContextCrumb>;
     this.frameClass = "frame-white";
     this.isLoading = false;
   }
