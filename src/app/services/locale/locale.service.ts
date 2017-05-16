@@ -36,6 +36,10 @@ export class Locale<T = any> {
    * @returns The observable stream holding the desired resource
    */
   public from<T = any>(resourceUrl: string): Observable<T> {
+    if (!this._resourceKeyCache) {
+      this._resourceKeyCache = new Map<string, string[]>();
+    }
+
     const resource = resourceUrl.replace(Locale.RES_PATTERN, this.current);
     return this.http.get(resource).map((response: Response) => response.json() as T);
   }
@@ -45,10 +49,6 @@ export class Locale<T = any> {
    * @param {string} resourceUrl The resource url to use as new origin
    */
   public origin(resourceUrl: string): Observable<T> {
-    if (!this._resourceKeyCache) {
-      this._resourceKeyCache = new Map<string, string[]>();
-    }
-
     return Observable.create(observer => {
       this.from(resourceUrl).subscribe(resource => {
         this._resourceKeyCache.set(resourceUrl, Object.keys(resource));
@@ -65,10 +65,6 @@ export class Locale<T = any> {
    * @param {string} resourceUrl The resource url to use for the merge process
    */
   public merge(resourceUrl: string): Observable<T> {
-    if (!this._resourceKeyCache) {
-      this._resourceKeyCache = new Map<string, string[]>();
-    }
-
     return Observable.create(observer => {
       this.from(resourceUrl).subscribe(resource => {
         this._resourceKeyCache.set(resourceUrl, Object.keys(resource));
