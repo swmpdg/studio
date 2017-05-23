@@ -1,5 +1,6 @@
 @import "var/colors";
 @import "var/spacing";
+@import "var/transitions";
 
 @import "fn/utils";
 
@@ -31,4 +32,10 @@
       opacity: .75;
     }
   }
+}
+
+// Todo: dropfocus
+// Transfer to a better categorized file...
+/deep/ .dropfocus {
+  opacity: .2;
 }

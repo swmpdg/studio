@@ -15,6 +15,9 @@ import { Repository } from "./services/repository/repository.service";
 // Views:
 import { StorageViewComponent } from "app/views/storage/storage.view";
 import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
+// Directives:
+import { DropDirective } from "./directives/drop/drop.directive";
+import { DragDirective } from "./directives/drag/drag.directive";
 // Components:
 import { ContextInformationComponent } from "./components/context-information/context.component";
 import { ColorPaletteComponent } from "./components/color-palette/color-palette.component";
@@ -28,6 +31,9 @@ import { LocalizationPipe } from "./pipes/l10n.pipe";
     // Views:
     StorageViewComponent,
     WorkspaceViewComponent,
+    // Directives:
+    DragDirective,
+    DropDirective,
     // Components:
     ContextInformationComponent,
     ColorPaletteComponent,
