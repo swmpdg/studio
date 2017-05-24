@@ -1,10 +1,10 @@
-.input-group {
+.group {
   display: table;
   width: 100%;
 
-  input { width: 100%; }
+  .fill, input { width: 100%; }
 
-  .input-add, input {
+  > * {
     display: table-cell;
   }
 }

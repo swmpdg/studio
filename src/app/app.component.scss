@@ -4,10 +4,15 @@
 
 @import "fn/utils";
 
+$z-main-frame: 10 !default;
+$z-face-frame: 5 !default;
+
 .main-frame {
+  z-index: $z-main-frame;
   position: fixed;
   top: 0; bottom: 0;
   left: 0; right: 0;
+  transition: .6s $ease-out-expo;
 
   &.frame-white {
     background: $baby-powder;
@@ -21,7 +26,7 @@
   }
 
   .version {
-    position: fixed;
+    position: absolute;
     bottom: 0; left: 0;
     margin: $page-space;
     font-family: monospace;
@@ -32,6 +37,39 @@
       opacity: .75;
     }
   }
+}
+
+$face-frame-width: 360px !default;
+
+.face-frame {
+  z-index: $z-face-frame;
+  transition: .6s $ease-out-expo;
+  width: $face-frame-width;
+
+  position: fixed;
+  top: 0; bottom: 0;
+  left: 0;
+
+  &.frame-active {
+    + .main-frame {
+      margin-left: $face-frame-width;
+    }
+  }
+
+  .face-name {
+    margin:
+      $page-space
+      $space-medium 0
+      $space-medium;
+    font-size: 1.4rem;
+  }
+}
+
+.face-toggle {
+  position: absolute;
+  top: 0; left: 0;
+  font-size: 20px;
+  padding: 10px;
 }
 
 // Todo: Drag and drop states

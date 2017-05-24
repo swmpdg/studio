@@ -19,6 +19,7 @@ import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
 import { DropDirective } from "./directives/drop/drop.directive";
 import { DragDirective } from "./directives/drag/drag.directive";
 // Components:
+import { NavigationComponent } from "./components/navigation/navigation.component";
 import { ContextInformationComponent } from "./components/context-information/context.component";
 import { ColorPaletteComponent } from "./components/color-palette/color-palette.component";
 import { ColorPickerComponent } from "./components/color-picker/color-picker.component";
@@ -35,6 +36,7 @@ import { LocalizationPipe } from "./pipes/l10n.pipe";
     DragDirective,
     DropDirective,
     // Components:
+    NavigationComponent,
     ContextInformationComponent,
     ColorPaletteComponent,
     ColorPickerComponent,

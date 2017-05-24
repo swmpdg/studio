@@ -14,7 +14,7 @@ $context-crumb-margin: 0 10px !default;
 $context-crumb-opacity: .4 !default;
 
 .context-information {
-  position: fixed;
+  position: absolute;
   top: 0; left: 0;
   white-space: nowrap;
 

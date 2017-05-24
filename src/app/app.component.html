@@ -1,3 +1,11 @@
+<div class="face-frame" [class.frame-active]="context.isFaceActive">
+  <div class="face-name">{{ context.name }}</div>
+
+  <navigation></navigation>
+
+  <span class="close" (click)="context.isFaceActive=!context.isFaceActive">&times;</span>
+</div>
+
 <div class="main-frame {{ context.frameClass }}">
   <context-information></context-information>
 
@@ -13,4 +21,9 @@
     v<span class="major">0</span>.<span class="minor">0</span>.<span class="path">0</span>
     <span class="git-sha">#{{ repository.commits[0]?.sha || ("latest" | l10n) }}</span>
   </div>
+
+  <span class="face-toggle mdi"
+    [class.mdi-menu-right]="!context.isFaceActive"
+    [class.mdi-menu-left]="context.isFaceActive"
+    (click)="context.isFaceActive=!context.isFaceActive"></span>
 </div>

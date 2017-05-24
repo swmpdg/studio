@@ -20,7 +20,7 @@ $color-default-cc: #777777 !default;
 
 .color-palette {
   z-index: $color-palette-z;
-  position: fixed;
+  position: absolute;
   bottom: 0; right: 0;
   margin: $page-space;
   user-select: none;

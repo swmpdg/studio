@@ -12,13 +12,11 @@
   }
   .color-picker-slider-label {
     @extend .align-middle;
-    @extend .input-add;
 
     font-size: small;
     min-width: 1rem;
   }
   .color-picker-value {
-    @extend .input-add;
     @extend .text-center;
     @extend .align-middle;
 

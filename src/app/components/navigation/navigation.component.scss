@@ -1,0 +1,50 @@
+@import "var/transitions";
+@import "var/spacing";
+@import "var/colors";
+
+@import "input/group";
+
+nav {
+  display: table;
+  padding: $space-medium 0;
+  width: 100%;
+
+  &:hover {
+    .nav-item {
+      opacity: .25;
+    }
+  }
+}
+
+.nav-item {
+  cursor: pointer;
+  transition: .3s $ease-out-expo;
+  padding: $space-small $space-medium;
+  display: block;
+
+  &:hover {
+    background: rgba(#888888, .05);
+    opacity: 1 !important;
+
+    .item-label {
+      color: $color-secondary;
+    }
+  }
+
+  .item-label, > * {
+    display: table-cell;
+    vertical-align: middle;
+    transition: inherit;
+  }
+
+  .item-icon {
+    font-size: 1.2rem;
+    min-width: 40px;
+  }
+
+  .item-label {
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+  }
+}
