@@ -34,8 +34,20 @@
   }
 }
 
-// Todo: dropfocus
+// Todo: Drag and drop states
 // Transfer to a better categorized file...
-/deep/ .dropfocus {
-  opacity: .2;
+/deep/ [drag] {
+  transition: .3s $ease-out-expo;
+  &.dragging {
+    transform: scale(.95);
+  }
+}
+
+/deep/ [drop] {
+  transition: .3s $ease-out-expo;
+  display: inline-block;
+
+  &.dragover {
+    transform: scale(1.05);
+  }
 }

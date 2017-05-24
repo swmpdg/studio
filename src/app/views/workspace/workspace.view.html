@@ -1,6 +1,6 @@
 <div class="application-page">
 
-  <ul class="bar vertical" draggable="true" drag [drag-constraint]="'.constraint'">
+  <ul class="bar vertical" draggable="true" drag>
     <li class="bar-modifier" [style.cursor]="'move'">
       <i class="mdi mdi-drag-horizontal"></i>
     </li>
@@ -21,14 +21,9 @@
     </li>
   </ul>
 
-  <div class="panel inline-block align-top">
+  <div class="panel inline-block align-top" drop>
     <color-picker></color-picker>
   </div>
-
-  <span class="constraint" drop></span>
-  <span drop></span>
-  <span class="constraint" drop></span>
-  <span drop></span>
 
   <color-palette></color-palette>
 </div>

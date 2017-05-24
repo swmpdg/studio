@@ -6,6 +6,12 @@ import { DropDirective } from "app/directives/drop/drop.directive";
 export class DragDirective {
   /** Gets the selector for the directive class declaration */
   public static readonly SELECTOR = "[drag]";
+  /** Gets the drag and drop state classes */
+  public static readonly STATES = {
+    dragging: "dragging",
+    dragover: "dragover",
+    dropfocus: "dropfocus"
+  };
 
   @Input("drag-constraint")
   /** Gets or sets the constraint selector to match available drop containers */
@@ -37,11 +43,21 @@ export class DragDirective {
 
   @HostListener("dragstart", [ "$event" ])
   protected onDragStart(e: DragEvent) {
-    console.log(`Containers matching "${this.dragConstraint}":`);
-    // Attach the dropfocus class to the available drop parents inside the dom...
-    this.relatedContainers.forEach(container => console.log(container));
+    // Attaches the dragging class to the native element...
+    this.nativeElement.classList.add(DragDirective.STATES.dragging);
+    // Attach the dropfocus class to the related drop containers...
+    this.relatedContainers.forEach(container => container.classList.add(
+      DragDirective.STATES.dropfocus
+    ));
   }
 
   @HostListener("dragend", [ "$event" ])
-  protected onDragEnd(e: DragEvent) { }
+  protected onDragEnd(e: DragEvent) {
+    // Detaches the dragging class from the native element...
+    this.nativeElement.classList.remove(DragDirective.STATES.dragging);
+    // Detach the dropfocus class from the related drop containers...
+    this.relatedContainers.forEach(container => container.classList.remove(
+      DragDirective.STATES.dropfocus
+    ));
+  }
 }
