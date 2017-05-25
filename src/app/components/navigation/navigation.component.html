@@ -1,8 +1,19 @@
 <nav>
   <ng-container *ngFor="let item of items">
-    <div class="nav-item" *ngIf="item">
-      <span class="item-icon {{ itemBaseClass }} {{ item.itemClass }}"></span>
-      <a [routerLink]="item.link" class="item-label">{{ item.label }}</a>
-    </div>
+    <ng-container [(ngSwitch)]="item.type">
+      <div class="nav-group" *ngSwitchCase="'group'">
+        <div class="nav-group-heading">{{ item.label }}</div>
+
+        <a class="link-item" *ngFor="let childItem of item.links" [routerLink]="childItem.link_url">
+          <span class="item-icon {{ itemBaseClass }} {{ childItem.itemClass }}"></span>
+          <span class="item-label">{{ childItem.label }}</span>
+        </a>
+      </div>
+
+      <a class="link-item" *ngSwitchDefault [routerLink]="item.link_url">
+        <span class="item-icon {{ itemBaseClass }} {{ item.itemClass }}"></span>
+        <span class="item-label">{{ item.label }}</span>
+      </a>
+    </ng-container>
   </ng-container>
 </nav>

@@ -66,6 +66,7 @@ $face-frame-width: 360px !default;
 }
 
 .face-toggle {
+  cursor: pointer;
   position: absolute;
   top: 0; left: 0;
   font-size: 20px;

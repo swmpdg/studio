@@ -9,21 +9,41 @@ nav {
   padding: $space-medium 0;
   width: 100%;
 
-  &:hover {
-    .nav-item {
+  .nav-group:hover {
+    .link-item {
       opacity: .25;
     }
   }
 }
 
-.nav-item {
-  cursor: pointer;
-  transition: .3s $ease-out-expo;
-  padding: $space-small $space-medium;
+.nav-group {
+  margin-bottom: $space-small;
   display: block;
 
+  .nav-group-heading {
+    padding: 10px $space-medium;
+    font-weight: 600;
+    font-size: .8rem;
+    opacity: .5;
+  }
+}
+
+.link-item {
+  transition: .3s $ease-out-expo;
+  padding: 10px $space-medium;
+  text-decoration: none;
+  font-size: .9rem;
+  display: block;
+  color: inherit;
+
+  &:active {
+    .item-label, .item-icon {
+      transform: translate(0, 1px);
+    }
+  }
   &:hover {
-    background: rgba(#888888, .05);
+    background: rgba(#888888, .1);
+    // To prevent the outer nav:hover opacity decrease...
     opacity: 1 !important;
 
     .item-label {
@@ -44,7 +64,5 @@ nav {
 
   .item-label {
     text-align: left;
-    text-decoration: none;
-    color: inherit;
   }
 }
