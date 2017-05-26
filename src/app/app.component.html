@@ -3,6 +3,15 @@
 
   <navigation></navigation>
 
+  <footer class="face-footer">
+    <code class="copy">
+      vandalsquad &copy; {{ now.getFullYear() }} <a [attr.href]="context.orgUrl" class="float-right">@vandalsquad</a>
+    </code>
+    <code class="version">
+      v0.0.0 #<span class="hash">b3fe2b6265e32d4a016fc0ac4452b067ef0b6f77</span>
+    </code>
+  </footer>
+
   <span class="close" (click)="context.isFaceActive=!context.isFaceActive">&times;</span>
 </div>
 

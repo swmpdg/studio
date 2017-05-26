@@ -58,6 +58,24 @@ $face-frame-width: 360px !default;
       text-decoration-color: rgba($white, .1);
     }
   }
+  .face-footer, footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    color: $color-secondary;
+    margin: $space-medium;
+    font-size: .75rem;
+
+    > * { display: block; }
+
+    .copy { }
+    .version {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: $space-small;
+      white-space: nowrap;
+      opacity: .6;
+    }
+  }
 }
 
 .face-toggle {
