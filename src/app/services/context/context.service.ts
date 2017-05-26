@@ -5,10 +5,11 @@ import { IContextCrumb } from "./context.typings";
 @Injectable()
 export class Context {
   /**
-   * Gets or sets the name for the active context
-   * @deprecated
+   * Gets or sets the organization name for the active context
    */
-  public name: string;
+  public orgName: string;
+  /** Gets or sets the organization url */
+  public orgUrl: string;
   /** Gets or sets the bread crumbs for the active context */
   public crumbs: Array<IContextCrumb>;
   /** Gets or sets the frame class for the active context */
@@ -20,7 +21,8 @@ export class Context {
 
   public constructor() {
     // Default context values...
-    this.name = "Vandalsquad";
+    this.orgName = "Vandalsquad";
+    this.orgUrl = "https://vandalsquad.io";
     this.crumbs = [{ label: "studio" }] as Array<IContextCrumb>;
     this.frameClass = "frame-white";
     this.isLoading = false;

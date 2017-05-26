@@ -2,7 +2,7 @@
   <span class="vandalsquad-tag"></span>
   <!--<span class="vandalsquad-logo"></span>-->
 
-  <!--<span class="context-name">{{ context.name }}</span>-->
+  <!--<span class="context-name">{{ contorgNamename }}</span>-->
   <span class="context-crumb" *ngFor="let crumb of context.crumbs">
     <a [routerLink]="crumb.link || empty">{{ crumb.label | l10n }}</a>
   </span>

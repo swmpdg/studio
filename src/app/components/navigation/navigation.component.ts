@@ -27,14 +27,15 @@ export class NavigationComponent extends BaseComponent {
     }]
   }, {
     type: "group",
-    label: "General",
+    label: "References",
     links: [{
       type: "link",
       label: "Github",
       itemClass: "mdi-github-circle"
     }, {
       type: "link",
-      label: "Help"
+      label: "Docs",
+      itemClass: "mdi-bookmark-outline"
     }]
   }];
 }
@@ -44,7 +45,7 @@ export interface NavigationItem {
   /**
    * Gets or sets the item type for this item. There are two types available:
    *  1. group: Requires the links property to be defined
-   *  2. link:  Requires the link_url and itemClass property to be defined
+   *  2. link:  Requires the link_url and itemClass properties to be defined
    */
   type: "group" | "link";
   /** Gets or sets the label for this item */
