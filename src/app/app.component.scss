@@ -12,7 +12,7 @@ $z-face-frame: 5 !default;
   position: fixed;
   top: 0; bottom: 0;
   left: 0; right: 0;
-  transition: .6s $ease-out-expo;
+  transition: .5s $ease-out-expo;
 
   &.frame-white {
     background: $baby-powder;
@@ -30,14 +30,19 @@ $face-frame-width: 360px !default;
 
 .face-frame {
   z-index: $z-face-frame;
-  transition: .6s $ease-out-expo;
+  transition: .5s $ease-out-expo;
   width: $face-frame-width;
+  transform: translate(-$space-large);
+  opacity: .4;
 
   position: fixed;
   top: 0; bottom: 0;
   left: 0;
 
   &.frame-active {
+    transform: translate(0);
+    opacity: 1;
+
     + .main-frame {
       margin-left: $face-frame-width;
     }
