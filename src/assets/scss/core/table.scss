@@ -37,9 +37,11 @@ table {
   &.table-hover tbody tr:hover {
     background: rgba(#888888, .1);
 
-    td:first-child,
+    td:first-child {
+      border-radius: $table-row-rounding 0 0 $table-row-rounding;
+    }
     td:last-child {
-      border-radius: $table-row-rounding;
+      border-radius: 0 $table-row-rounding $table-row-rounding 0;
     }
   }
 }
