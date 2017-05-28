@@ -12,7 +12,7 @@ $z-face-frame: 5 !default;
   position: fixed;
   top: 0; bottom: 0;
   left: 0; right: 0;
-  transition: .5s $ease-out-expo;
+  transition: margin .5s $ease-out-expo;
 
   &.frame-white {
     background: $baby-powder;
@@ -91,11 +91,15 @@ $face-frame-width: 360px !default;
 .face-toggle {
   cursor: pointer;
   position: absolute;
-  transition: .2s ease-out;
+  transition: .1s ease-out;
   top: 0; left: 0;
   font-size: 20px;
   opacity: .4;
   padding: 10px;
+
+  &:active {
+    transform: translate(0, 1px);
+  }
 
   &.active {
     opacity: .2;
