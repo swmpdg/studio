@@ -94,10 +94,11 @@ $face-frame-width: 360px !default;
   transition: .2s ease-out;
   top: 0; left: 0;
   font-size: 20px;
+  opacity: .4;
   padding: 10px;
 
   &.active {
-    opacity: .4;
+    opacity: .2;
   }
 }
 
