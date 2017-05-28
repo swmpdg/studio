@@ -18,6 +18,10 @@ $z-face-frame: 5 !default;
     background: $baby-powder;
     color: $black;
   }
+  &.frame-dark {
+    background-color: $dark-purple;
+    color: text-color($dark-purple);
+  }
   @each $scheme, $color in $schemes {
     &.frame-#{$scheme} {
       background: $color;
@@ -33,6 +37,7 @@ $face-frame-width: 360px !default;
   transition: .5s $ease-out-expo;
   width: $face-frame-width;
   transform: translate(-$space-large);
+  background: $black;
   opacity: .4;
 
   position: fixed;

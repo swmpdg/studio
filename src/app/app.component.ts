@@ -16,10 +16,8 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
 
   public constructor(
     protected locale: Locale,
-    protected repository: Repository,
     protected context: Context,
-    protected router: Router
-  ) {
+    protected router: Router) {
     super();
 
     this.locale.origin(AppComponent.RESOURCE_URL).subscribe();

@@ -44,20 +44,12 @@ $context-crumb-opacity: .4 !default;
     font-weight: 700;
 
     .context-crumb-link, a {
-      text-decoration: none;
       cursor: default;
-      color: inherit;
-
-      &:hover {
-        text-decoration: underline;
-        text-decoration-color: rgba($context-crumb-color, .1);
-      }
     }
 
     &:before {
-      content: $context-crumb-content;
       display: inline-block;
-      color: $context-crumb-color;
+      content: $context-crumb-content;
       margin: $context-crumb-margin;
       opacity: $context-crumb-opacity;
     }

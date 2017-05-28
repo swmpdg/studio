@@ -10,19 +10,15 @@ import { Context } from "../../services/context/context.service";
   styleUrls: [ "./workspace.view.scss" ]
 })
 export class WorkspaceViewComponent extends BaseComponent implements OnDestroy {
-  public static readonly RESOURCE_URL = "/assets/lang/{locale}/workspace.json";
-
   public constructor(
-    protected locale: Locale,
     protected context: Context) {
     super();
 
-    this.locale.merge(WorkspaceViewComponent.RESOURCE_URL).subscribe();
+    this.context.frameClass = "frame-white";
     this.context.crumbs.push({ label: "workspace" });
   }
 
   public ngOnDestroy() {
-    this.locale.dispose(WorkspaceViewComponent.RESOURCE_URL).subscribe();
     this.context.crumbs.pop();
   }
 }

@@ -2,6 +2,8 @@ import { Component, OnDestroy } from "@angular/core";
 
 import { Storage } from "app/services/storage/storage.service";
 import { Locale } from "app/services/locale/locale.service";
+import { Context } from "../../services/context/context.service";
+
 import { BaseComponent } from "app/core/base-component";
 
 @Component({
@@ -9,18 +11,16 @@ import { BaseComponent } from "app/core/base-component";
   templateUrl: "./storage.view.html"
 })
 export class StorageViewComponent extends BaseComponent implements OnDestroy {
-  public static readonly RESOURCE_URL = "/assets/lang/{locale}/storage.json";
-
   public constructor(
-    protected locale: Locale,
-    protected storage: Storage
-  ) {
+    protected storage: Storage,
+    protected context: Context) {
     super();
 
-    this.locale.merge(StorageViewComponent.RESOURCE_URL).subscribe();
+    this.context.frameClass = "frame-dark";
+    this.context.crumbs.push({ label: "storage" });
   }
 
   public ngOnDestroy() {
-    this.locale.dispose(StorageViewComponent.RESOURCE_URL).subscribe();
+    this.context.crumbs.pop();
   }
 }

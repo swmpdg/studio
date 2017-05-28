@@ -1,6 +1,9 @@
 import { Injectable } from "@angular/core";
 
 import { IContextCrumb } from "./context.typings";
+import { NavigationItem } from "../../components/navigation/navigation.component";
+
+import { NAVIGATION } from "./context.navigation";
 
 @Injectable()
 export class Context {
@@ -12,6 +15,8 @@ export class Context {
   public orgUrl: string;
   /** Gets or sets the bread crumbs for the active context */
   public crumbs: Array<IContextCrumb>;
+  /** Gets or sets the navigation items for the active context */
+  public navigation: Array<NavigationItem>;
   /** Gets or sets the frame class for the active context */
   public frameClass: string;
   /** Gets or sets the active state for the face frame */
@@ -24,6 +29,7 @@ export class Context {
     this.orgName = "Vandalsquad";
     this.orgUrl = "https://vandalsquad.io";
     this.crumbs = [{ label: "studio" }] as Array<IContextCrumb>;
+    this.navigation = NAVIGATION;
     this.frameClass = "frame-white";
     this.isLoading = false;
     this.isFaceActive = true;

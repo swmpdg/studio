@@ -1,4 +1,9 @@
 {
   "studio": "Studio",
+  "storage": "Storage",
+  "workspace": "Workspace",
+  "settings": "Settings",
+  "documentation": "Documentation",
+  "references": "References",
   "latest": "latest"
 }

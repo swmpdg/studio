@@ -2,17 +2,17 @@
   <ng-container *ngFor="let item of items">
     <ng-container [(ngSwitch)]="item.type">
       <div class="nav-group" *ngSwitchCase="'group'">
-        <div class="nav-group-heading">{{ item.label }}</div>
+        <div class="nav-group-heading">{{ item.label | l10n }}</div>
 
         <a class="link-item" *ngFor="let childItem of item.links" [routerLink]="childItem.link_url">
-          <span class="item-icon {{ itemBaseClass }} {{ childItem.itemClass }}"></span>
-          <span class="item-label">{{ childItem.label }}</span>
+          <span class="item-icon {{ iconBaseClass }} {{ childItem.icon_class }}"></span>
+          <span class="item-label">{{ childItem.label | l10n }}</span>
         </a>
       </div>
 
       <a class="link-item" *ngSwitchDefault [routerLink]="item.link_url">
-        <span class="item-icon {{ itemBaseClass }} {{ item.itemClass }}"></span>
-        <span class="item-label">{{ item.label }}</span>
+        <span class="item-icon {{ iconBaseClass }} {{ item.icon_class }}"></span>
+        <span class="item-label">{{ item.label | l10n }}</span>
       </a>
     </ng-container>
   </ng-container>

@@ -1,7 +1,7 @@
 <div class="face-frame" [class.frame-active]="context.isFaceActive">
   <a class="face-name" [attr.href]="context.orgUrl">{{ context.orgName }}</a>
 
-  <navigation></navigation>
+  <navigation [items]="context.navigation"></navigation>
 
   <footer class="face-footer">
     <code class="copy">
