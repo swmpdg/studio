@@ -5,5 +5,8 @@
   "settings": "Settings",
   "documentation": "Documentation",
   "references": "References",
-  "latest": "latest"
+  "latest": "latest",
+  "files": "Files",
+  "filename": "Filename",
+  "last_modified": "Last modified"
 }

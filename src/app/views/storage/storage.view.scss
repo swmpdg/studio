@@ -1,0 +1,27 @@
+.storage-files {
+  tr {
+    .file-actions {
+      cursor: default;
+      transition: .2s ease-out;
+      opacity: 0;
+
+      &:active {
+        transform: translate(0, 1px);
+      }
+    }
+    &:hover .file-actions {
+      opacity: 1;
+    }
+  }
+}
+
+/deep/ .file-name {
+  .file-ext {
+    opacity: .4;
+
+    &:before {
+      display: inline;
+      content: ".";
+    }
+  }
+}
