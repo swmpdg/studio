@@ -5,11 +5,11 @@
 
   <footer class="face-footer">
     <code class="copy">
-      vandalsquad &copy; {{ now.getFullYear() }} <a [attr.href]="context.orgUrl" class="float-right">@vandalsquad</a>
+      Vandalsquad &copy; {{ now.getFullYear() }} <a [attr.href]="context.orgUrl" class="float-right">@vandalsquad</a>
     </code>
-    <code class="version">
+    <!--<code class="version">
       v0.0.0 #<span class="hash">b3fe2b6265e32d4a016fc0ac4452b067ef0b6f77</span>
-    </code>
+    </code>-->
   </footer>
 
   <span class="close" (click)="context.isFaceActive=!context.isFaceActive">&times;</span>
@@ -31,8 +31,6 @@
     <span class="git-sha">#{{ repository.commits[0]?.sha || ("latest" | l10n) }}</span>
   </div>-->
 
-  <span class="face-toggle mdi"
-    [class.mdi-menu-right]="!context.isFaceActive"
-    [class.mdi-menu-left]="context.isFaceActive"
+  <span class="face-toggle mdi mdi-apps" [class.active]="context.isFaceActive"
     (click)="context.isFaceActive=!context.isFaceActive"></span>
 </div>

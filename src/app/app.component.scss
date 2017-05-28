@@ -91,9 +91,14 @@ $face-frame-width: 360px !default;
 .face-toggle {
   cursor: pointer;
   position: absolute;
+  transition: .2s ease-out;
   top: 0; left: 0;
   font-size: 20px;
   padding: 10px;
+
+  &.active {
+    opacity: .4;
+  }
 }
 
 // Todo: Drag and drop states
