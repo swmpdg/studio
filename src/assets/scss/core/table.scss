@@ -1,0 +1,45 @@
+
+$table-padding-x: 8px !default;
+$table-padding-y: 12px !default;
+
+$table-row-rounding: 6px !default;
+
+$table-head-opacity: .5 !default;
+$table-head-font-weight: bold !default;
+$table-head-font-size: small !default;
+$table-head-padding-x: $table-padding-x !default;
+$table-head-padding-y: $table-padding-y !default;
+
+$table-data-padding-x: $table-padding-x !default;
+$table-data-padding-y: $table-padding-y !default;
+
+table {
+  border-collapse: collapse;
+  transition: .2s ease-out;
+  text-align: left;
+  width: 100%;
+
+  th {
+    opacity: $table-head-opacity;
+    font-weight: $table-head-font-weight;
+    font-size: $table-head-font-size;
+    padding:
+      $table-head-padding-y
+      $table-head-padding-x;
+  }
+
+  td {
+    padding:
+      $table-data-padding-y
+      $table-data-padding-x;
+  }
+
+  &.table-hover tbody tr:hover {
+    background: rgba(#888888, .1);
+
+    td:first-child,
+    td:last-child {
+      border-radius: $table-row-rounding;
+    }
+  }
+}
