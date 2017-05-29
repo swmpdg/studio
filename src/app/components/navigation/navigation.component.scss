@@ -51,6 +51,12 @@ nav {
     }
   }
 
+  &.active {
+    .item-label {
+      color: $color-secondary;
+    }
+  }
+
   .item-label, > * {
     display: table-cell;
     vertical-align: middle;

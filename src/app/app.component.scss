@@ -18,10 +18,6 @@ $z-face-frame: 5 !default;
     background: $baby-powder;
     color: $black;
   }
-  &.frame-dark {
-    background-color: $dark-purple;
-    color: text-color($dark-purple);
-  }
   @each $scheme, $color in $schemes {
     &.frame-#{$scheme} {
       background: $color;

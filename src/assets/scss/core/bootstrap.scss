@@ -31,7 +31,10 @@ $vandalsquad-logo-src: ("../png/vandalsquad_logo.png") !default;
 
 $vandalsquad-tag-width: 570.109px !default;
 $vandalsquad-tag-height: 165.554px !default;
+
 $vandalsquad-tag-src: ("../svg/vandalsquad_tag.svg") !default;
+$vandalsquad-tag-src-white: ("../png/vandalsquad_tag_white.png") !default;
+$vandalsquad-tag-src-black: ("../png/vandalsquad_tag_black.png") !default;
 
 .vandalsquad-tag {
   display: inline-block;
@@ -39,6 +42,15 @@ $vandalsquad-tag-src: ("../svg/vandalsquad_tag.svg") !default;
   height: $vandalsquad-tag-height;
   background: url($vandalsquad-tag-src) no-repeat center center;
   background-size: contain;
+
+  &.tag-white {
+    background: url($vandalsquad-tag-src-white) no-repeat center center;
+    background-size: contain;
+  }
+  &.tag-black {
+    background: url($vandalsquad-tag-src-black) no-repeat center center;
+    background-size: contain;
+  }
 }
 
 .application-page {

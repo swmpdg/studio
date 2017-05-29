@@ -9,15 +9,17 @@
         transform: translate(0, 1px);
       }
     }
-    &:hover .file-actions {
-      opacity: 1;
+
+    &:hover .file-actions,
+    &:hover .file-ext {
+      opacity: .4;
     }
   }
 }
 
 /deep/ .file-name {
   .file-ext {
-    opacity: .4;
+    opacity: .2;
 
     &:before {
       display: inline;

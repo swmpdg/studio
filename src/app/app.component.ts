@@ -24,7 +24,7 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit() {
-    this.router.navigate([ "/workspace" ]);
+    this.router.navigate([ "/storage" ]);
     // this.repository.getCommitHistory().subscribe();
   }
   public ngOnDestroy() {

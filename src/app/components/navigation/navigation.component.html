@@ -4,7 +4,9 @@
       <div class="nav-group" *ngSwitchCase="'group'">
         <div class="nav-group-heading">{{ item.label | l10n }}</div>
 
-        <a class="link-item" *ngFor="let childItem of item.links" [routerLink]="childItem.link_url">
+        <a class="link-item" *ngFor="let childItem of item.links"
+          [routerLink]="childItem.link_url"
+          [routerLinkActive]="[ 'active' ]">
           <span class="item-icon {{ iconBaseClass }} {{ childItem.icon_class }}"></span>
           <span class="item-label">{{ childItem.label | l10n }}</span>
         </a>

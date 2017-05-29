@@ -12,10 +12,10 @@ import { BaseComponent } from "app/core/base-component";
 })
 export class StorageViewComponent extends BaseComponent implements OnDestroy {
   public files: any[] = [
-    { name: "vandalsquad_studio_intro", ext: "vc", last_mod: this.now },
-    { name: "piece_01", ext: "vc", last_mod: this.now },
-    { name: "piece_02", ext: "vc", last_mod: this.now },
-    { name: "some_juicy_experiments", ext: "vc", last_mod: this.now }
+    { name: "vandalsquad_studio_intro", ext: "io", last_mod: this.now },
+    { name: "piece_01", ext: "io", last_mod: this.now },
+    { name: "piece_02", ext: "io", last_mod: this.now },
+    { name: "some_juicy_experiments", ext: "io", last_mod: this.now }
   ];
 
   public constructor(
@@ -23,7 +23,8 @@ export class StorageViewComponent extends BaseComponent implements OnDestroy {
     protected context: Context) {
     super();
 
-    this.context.frameClass = "frame-dark";
+    this.context.tagClass = "tag-white";
+    this.context.frameClass = "frame-primary";
     this.context.crumbs.push({ label: "storage" });
   }
 

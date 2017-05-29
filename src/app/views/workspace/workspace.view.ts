@@ -14,6 +14,7 @@ export class WorkspaceViewComponent extends BaseComponent implements OnDestroy {
     protected context: Context) {
     super();
 
+    this.context.tagClass = "tag-black";
     this.context.frameClass = "frame-white";
     this.context.crumbs.push({ label: "workspace" });
   }

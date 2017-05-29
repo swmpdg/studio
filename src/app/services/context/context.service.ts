@@ -19,6 +19,8 @@ export class Context {
   public navigation: Array<NavigationItem>;
   /** Gets or sets the frame class for the active context */
   public frameClass: string;
+  /** Gets or sets the tag class for the active context */
+  public tagClass: string;
   /** Gets or sets the active state for the face frame */
   public isFaceActive: boolean;
   /** Gets or sets whether the current context is blocked by some loading or not */
@@ -31,6 +33,7 @@ export class Context {
     this.crumbs = [{ label: "studio" }] as Array<IContextCrumb>;
     this.navigation = NAVIGATION;
     this.frameClass = "frame-white";
+    this.tagClass = "tag-black";
     this.isLoading = false;
     this.isFaceActive = true;
   }
