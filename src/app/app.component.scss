@@ -104,6 +104,8 @@ $face-frame-width: 360px !default;
 
 // Todo: Drag and drop states
 // Transfer to a better categorized file...
+// Styling the drag and drop state classes shouldn't have a default since there are too many use cases!
+/*
 /deep/ [drag] {
   transition: .3s $ease-out-expo;
   &.dragging {
@@ -118,4 +120,4 @@ $face-frame-width: 360px !default;
   &.dragover {
     transform: scale(1.05);
   }
-}
+}*/
