@@ -41,6 +41,18 @@ export class DragDirective {
     return DragDirective.getDropContainers(this.dragConstraint);
   }
 
+  @HostListener("mousedown")
+  protected onMouseDown() {
+    // Make the host element natively draggable...
+    this.nativeElement.draggable = true;
+  }
+
+  @HostListener("mouseup")
+  protected onMouseUp() {
+    // Revokes the draggable attribute from the host element as it isn't when no drag end is emitted...
+    this.nativeElement.removeAttribute("draggable");
+  }
+
   @HostListener("dragstart", [ "$event" ])
   protected onDragStart(e: DragEvent) {
     // Attaches the dragging class to the native element...
@@ -53,6 +65,7 @@ export class DragDirective {
 
   @HostListener("dragend", [ "$event" ])
   protected onDragEnd(e: DragEvent) {
+    this.nativeElement.removeAttribute("draggable");
     // Detaches the dragging class from the native element...
     this.nativeElement.classList.remove(DragDirective.STATES.dragging);
     // Detach the dropfocus class from the related drop containers...
