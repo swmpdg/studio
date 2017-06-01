@@ -1,6 +1,15 @@
 <main class="application-page">
   <h3>{{ "files" | l10n }}</h3>
 
+  <div class="text-left" [style.margin-bottom]="'10px'">
+    <button class="primary">
+      <i class="mdi mdi-plus"></i>&nbsp;{{ "file" | l10n }}
+    </button>
+    <button class="primary">
+      <i class="mdi mdi-plus"></i>&nbsp;{{ "folder" | l10n }}
+    </button>
+  </div>
+
   <table class="table-hover storage-files">
     <thead>
       <tr>
@@ -10,11 +19,14 @@
       </tr>
     </thead>
     <ng-container *ngFor="let file of files">
-      <tr>
-        <td class="file-name">{{ file.name }}<span class="file-ext">{{ file.ext }}</span></td>
+      <tr drag>
+        <td class="file-descriptor">
+          <span class="file-icon {{ file.icon }}"></span>
+          <span class="file-name">{{ file.name }}</span>
+        </td>
         <td>{{ file.last_mod | date: "dd.MM.yy hh:mm" }}</td>
         <td class="file-actions">
-          <i class="mdi mdi-equal"></i>
+          <i class="mdi mdi-chevron-down"></i>
         </td>
       </tr>
     </ng-container>

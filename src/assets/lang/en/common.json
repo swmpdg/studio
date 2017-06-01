@@ -8,5 +8,7 @@
   "latest": "latest",
   "files": "Files",
   "filename": "Filename",
-  "last_modified": "Last modified"
+  "last_modified": "Last modified",
+  "folder": "Folder",
+  "file": "File"
 }

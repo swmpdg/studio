@@ -1,8 +1,14 @@
 .storage-files {
   tr {
+    transition: .1s ease-out;
+
+    &.dragging {
+      opacity: .5;
+    }
+
     .file-actions {
       cursor: default;
-      transition: .2s ease-out;
+      transition: inherit;
       opacity: 0;
 
       &:active {
@@ -10,20 +16,30 @@
       }
     }
 
-    &:hover .file-actions,
-    &:hover .file-ext {
+    &:hover .file-drag {
+      transform: none;
+      opacity: .4;
+    }
+    &:hover .file-actions {
       opacity: .4;
     }
   }
 }
 
-/deep/ .file-name {
-  .file-ext {
-    opacity: .2;
+$file-icon-color:   #888888 !default;
+$folder-icon-color: #ccaa66 !default;
 
-    &:before {
-      display: inline;
-      content: ".";
+.file-descriptor {
+  .file-icon {
+    margin-right: 5px;
+    color: $file-icon-color;
+
+    &.icon-folder {
+      color: $folder-icon-color;
     }
+  }
+
+  .file-ext {
+    opacity: .4;
   }
 }
