@@ -34,7 +34,6 @@ $face-frame-width: 360px !default;
   width: $face-frame-width;
   transform: translate(-$space-large);
   background: $black;
-  opacity: .4;
 
   position: fixed;
   top: 0; bottom: 0;
@@ -42,7 +41,6 @@ $face-frame-width: 360px !default;
 
   &.frame-active {
     transform: translate(0);
-    opacity: 1;
 
     + .main-frame {
       margin-left: $face-frame-width;
