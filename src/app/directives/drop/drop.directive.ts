@@ -35,8 +35,4 @@ export class DropDirective {
     // Take a look at: https://github.com/vandalsquad/studio/issues/4
     // this.drop.emit(e);
   }
-
-  // Todo: Drag and drop states
-  // This states appearance is currently held by the "app.component.scss" file. Future implementations should target a
-  // cleaner categorization for the related styles...
 }

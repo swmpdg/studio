@@ -9,11 +9,11 @@ import { ROUTES } from "./app.routes";
 
 // Services:
 import { Locale } from "app/services/locale/locale.service";
-import { Storage } from "app/services/storage/storage.service";
+import { Archive } from "app/services/archive/archive.service";
 import { Context } from "app/services/context/context.service";
 import { Repository } from "./services/repository/repository.service";
 // Views:
-import { StorageViewComponent } from "app/views/storage/storage.view";
+import { ArchiveViewComponent } from "app/views/archive/archive.view";
 import { WorkspaceViewComponent } from "app/views/workspace/workspace.view";
 // Directives:
 import { DropDirective } from "./directives/drop/drop.directive";
@@ -30,7 +30,7 @@ import { LocalizationPipe } from "./pipes/l10n.pipe";
   declarations: [
     AppComponent,
     // Views:
-    StorageViewComponent,
+    ArchiveViewComponent,
     WorkspaceViewComponent,
     // Directives:
     DragDirective,
@@ -52,7 +52,7 @@ import { LocalizationPipe } from "./pipes/l10n.pipe";
   providers: [
     Locale,
     Context,
-    Storage,
+    Archive,
     Repository
   ],
   bootstrap: [AppComponent]

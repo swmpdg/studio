@@ -5,14 +5,14 @@ export const NAVIGATION = [{
   label: "studio",
   links: [{
     type: "link",
+    label: "archive",
+    link_url: "/archive",
+    icon_class: "mdi-floppy"
+  }, {
+    type: "link",
     label: "workspace",
     link_url: "/workspace",
     icon_class: "mdi-brush"
-  }, {
-    type: "link",
-    label: "storage",
-    link_url: "/storage",
-    icon_class: "mdi-floppy"
   }, {
     type: "link",
     label: "settings",

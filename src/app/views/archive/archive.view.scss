@@ -6,7 +6,7 @@
       opacity: .5;
     }
 
-    .file-actions {
+    .item-actions {
       cursor: default;
       transition: inherit;
       opacity: 0;
@@ -20,7 +20,7 @@
       transform: none;
       opacity: .4;
     }
-    &:hover .file-actions {
+    &:hover .item-actions {
       opacity: .4;
     }
   }
@@ -29,8 +29,10 @@
 $file-icon-color:   #888888 !default;
 $folder-icon-color: #ccaa66 !default;
 
-.file-descriptor {
-  .file-icon {
+.item-descriptor {
+  cursor: default;
+
+  .item-icon {
     margin-right: 5px;
     color: $file-icon-color;
 
